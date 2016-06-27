@@ -2,9 +2,160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BasePage</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script src="materialize/js/Modals.js"></script>
+
 </head>
 <body>
+
+<div class="container">
+ <div class="row basepage">
+     <!--サイドバ　開始ー-->
+      <div class="col s3 grey darken-3 white-text sideBar-fixed side-z-index">
+          <h5>MyName</h5>
+          <h4>
+              #Rooms
+              <a class="dropdown-button bun right white-text" href="modal1" data-activates="dropdown1">
+                  <i class="material-icons">add</i>
+              </a>
+              <ul id='dropdown1' class="dropdown-content grey lighten-1">
+                  <div>
+                     <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal1">新規登録</a></li>
+                  </div>
+
+                  <li><a class="black-text" href="#!">削除</a></li>
+
+              </ul>
+
+          </h4>
+
+          <ul>
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">営業の良いところ</a></li>
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">金融業界の今後</a></li>
+          </ul>
+
+          <h4>
+              #Other Rooms
+              <a class="dropdown-button bun right white-text" href="#" data-activates="dropdown1">
+                  <i class="material-icons">add</i>
+              </a>
+              <ul id='dropdown1' class="dropdown-content grey lighten-1">
+                  <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
+                  <li><a class="black-text" href="#!">削除</a></li>
+
+              </ul>
+          </h4>
+
+
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">新規作成</a></li>
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">削除</a></li>
+          </ul>
+
+      </div><!--サイドバ 終了ー-->
+
+     <!-- Modal Structure -->
+     <div id="modal1" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>新規登録</h4>
+             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">登録</a>
+         </div>
+     </div>
+
+     <div id="modal2" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>新規登録</h4>
+             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">登録</a>
+         </div>
+     </div>
+
+     <!--テーマ（タイトル）開始ー-->
+      <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index">
+          <h5>営業の良いところ</h5>
+          {% block content %}
+          {% endblock %}
+      </div>
+      <!--テーマ（タイトル）終了ー-->
+
+     <!--チャット画面）開始ー-->
+     <div class="col s9 grey lighten-3 chat">
+         <div class="card hoverable white chat">
+             <div class="container left-align name">@Kikuya Takumi</div>
+             <div class="left image"><img src="Chrysanthemum.jpg" width="80" height="80"></div>
+             <div class="card-content container left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>
+                     a<br>
+                     a<br>
+                     a<br>
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                 </div>
+             </div>
+                  <!--{% block content %}
+                  {% endblock %}-->
+
+
+         </div>
+
+         <div class="card hoverable white chat">
+             <div class="container left-align name">@Kikuya Takumi</div>
+             <div class="left image"><img src="Chrysanthemum.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>a
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                 </div>
+             </div>
+
+                  <!--{% block content %}
+                  {% endblock %}-->
+         </div>
+
+
+     </div>
+      <!--チャット画面終了ー-->
+
+    <!--投稿欄開始-->
+    <footer>
+        <div class="input-chat">
+            <div class="left">
+                <input type="submit" value="+">
+                <table class="input-chat-table">
+                    <td><input type="text" name="input-chat" value="" size="120"></td>
+                </table>
+
+            </div>
+        </div>
+    </footer>
+    <!--投稿欄終了-->
+
+</div>
+
+
+
 
 </body>
 </html>
