@@ -7,3 +7,9 @@ $('#modal1').closeModal();
 
 $('#modal2').openModal();
 $('#modal2').closeModal();
+
+$('#modal-edit1').openModal();
+$('#modal-edit1').closeModal();
+
+$('#modal-edit2').openModal();
+$('#modal-edit2').closeModal();

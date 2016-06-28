@@ -2,6 +2,7 @@
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
+
 }
 
 .iconSize{
@@ -16,12 +17,13 @@
 }
 
 .titleBar{
-    margin-left: 20%;
     z-index:1;
+    left:25%;
+    position:fixed;
 }
 .input-chat{
     visibility:visible;
-    margin-left: 25%;
+    margin-left: 35%;
 }
 
 
@@ -49,9 +51,7 @@ margin-top:2%;
 }
 
 .chat-content{
-    padding-left:25%;
-    position:relative;
-    position:relative;
+    margin-left:10%;
 }
 
 .chat-z-index{
@@ -59,11 +59,47 @@ margin-top:2%;
 }
 
 .input-chat-table{
-    margin-left:5%;
+    margin-left:0%;
     visibility:visible;
 }
 
 .basepage{
     min-height:100%;
     visibility:visible;
+}
+
+.input-border-style{
+    border-style:solid;
+    border-color:
+}
+
+.table-size{
+    height:3px;
+}
+
+.login-z-index{
+    z-index:0;
+    position:relative;
+}
+
+.login-image{
+    position:fixed;
+}
+
+.title-name{
+    z-index:1;
+    position:fixed;
+    top:40%;
+    left:10%;
+}
+
+.login-user-id{
+ z-index:1;
+    position:fixed;
+    top:53%;
+    left:6%;
+
+}
+.login-user-id-border{
+    border-style:solid;
 }
