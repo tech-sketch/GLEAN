@@ -44,6 +44,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+ex_password.py
 
 # Translations
 *.mo
@@ -87,3 +88,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Password file
+ex_password.py
+
+‘Þ”ð/
