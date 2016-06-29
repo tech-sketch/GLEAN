@@ -70,8 +70,10 @@
               <li class="card s3 grey darken-2"><a class="white-text" href="#!">金融業界の今後</a></li>
               -->
               <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-                <span ng-bind="item.theme"></span>
-                <button type="button" ng-click="read_theme(item)">show</button>
+
+                <span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span>
+
+
               </li>
           </ul>
 
