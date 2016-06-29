@@ -17,9 +17,25 @@
 <div class="container">
 
  <div class="row basepage grey lighten-3">
+     <div class="navbar-fixed">
      <!--サイドバ　開始ー-->
       <div class="col s3 grey darken-3 white-text sideBar-fixed side-z-index">
-          <h5><a href="#">MyName</a></h5>
+          <span>
+              <h5>
+                 <i class="material-icons">perm_identity</i>
+                  <a class="dropdown-button bun white-text" href="modal-profile" data-activates="dropdown-profile">
+                     MyName
+                  </a>
+              </h5>
+              <!-- Dropdown Structure -->
+                  <ul id='dropdown-profile' class='dropdown-content'>
+                      <div>
+                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-profile">個人設定</a></li>
+                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
+                      </div>
+                  </ul>
+          </span>
+
           <h4>
               #Rooms
               <a class="dropdown-button bun right white-text" href="modal1" data-activates="dropdown1">
@@ -57,9 +73,10 @@
               <li class="card s3 grey darken-2"><a class="white-text" href="#!">削除</a></li>
           </ul>
 
-      </div><!--サイドバ 終了ー-->
+      </div>
+         <!--サイドバ 終了ー-->
 
-     <!-- Modal Structure -->
+     <!-- Modal Structure 開始-->
      <div id="modal1" class="modal modal-fixed-footer">
          <div class="modal-content">
              <h4>新規登録</h4>
@@ -104,9 +121,42 @@
          </div>
      </div>
 
+     <div id="modal-profile" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>プロフィール</h4>
+             <p>名前:</p><input type="text" name="name" value="" size="20">
+             <p>メールアドレス:</p><input type="text" name="email_address" value="" size="20">
+             <p>パスワード:</p><input type="text" name="password" value="" size="20">
+             <p>パスワード(確認):</p><input type="text" name="password" value="" size="20">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+         </div>
+     </div>
+
+     <div id="modal-logout" class="modal">
+        <div class="modal-content">
+          <h4>ログアウトしますか？</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
+
+        </div>
+      </div>
+     <!-- Modal Structure 終了-->
+
      <!--テーマ（タイトル）開始ー-->
-      <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index">
-          <h5>営業の良いところ</h5>
+         <div class="fixedBar grey lighten-1 teal-text">
+            <nav class="grey lighten-1">
+              <div>
+                <h5>営業の良いところ</h5>
+              </div>
+            </nav>
+          </div>
+      <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index navbar-fixed">
+
           {% block content %}
           {% endblock %}
       </div>
@@ -117,7 +167,8 @@
          <div class="card hoverable white chat">
              <div class="container name">
                  <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right name">2016/06/28 14:32</span>
+                 <span class="right datetime">2016/06/28 14:32</span>
+
              </div>
              <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
              <div class="card-content left-align chat-content">
@@ -143,7 +194,7 @@
          <div class="card hoverable white chat">
              <div class="container name">
                  <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right name">2016/06/28 14:55</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
              </div>
 
              <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
@@ -166,31 +217,7 @@
          <div class="card hoverable white chat">
              <div class="container name">
                  <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right name">2016/06/28 14:55</span>
-             </div>
-
-             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
-             <div class="card-content left-align chat-content">
-                 <p class="chat-content">
-                     いろいろな<br>
-                     業界のお客さんと交流できるところ！
-                     a<br>a
-                 </p>
-                 <div>
-                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                 </div>
-             </div>
-
-                  <!--{% block content %}
-                  {% endblock %}-->
-         </div>
-
-
-         <div class="card hoverable white chat">
-             <div class="container name">
-                 <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right name">2016/06/28 14:55</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
              </div>
 
              <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
@@ -214,7 +241,7 @@
          <div class="card hoverable white chat">
              <div class="container name">
                  <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right name">2016/06/28 14:55</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
              </div>
 
              <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
@@ -234,22 +261,40 @@
                   {% endblock %}-->
          </div>
 
-    <!--投稿欄開始-->
-        <div class="input-chat">
-            <div class="left">
 
-                <table class="input-chat-table">
-                    <td>
-                        <input type="submit" value="+">
-                    </td>
-                    <td>
-                        <input class="input-border-style" type="text white" name="input-chat" value="" size="120">
-                    </td>
-                </table>
+         <div class="card hoverable white chat">
+             <div class="container name">
+                 <span class="left-align name">@Kikuya Takumi</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
+             </div>
 
-            </div>
+             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>a
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                 </div>
+             </div>
+
+                  <!--{% block content %}
+                  {% endblock %}-->
+         </div>
+
+    <!--投稿欄 開始-->
+        <div class="container input-chat left">
+            <nav class="grey lighten-1">
+                    <span><input class="black-text" type="submit" value="+"></span>
+                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="120"></span>
+            </nav>
+
         </div>
-    <!--投稿欄終了-->
+
+    <!--投稿欄 終了-->
 
      </div>
       <!--チャット画面終了ー-->
