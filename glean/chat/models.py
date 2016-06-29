@@ -12,7 +12,7 @@ class Theme(SelfPublishModel, models.Model):
     theme = models.CharField('テーマ', max_length=255)
     text = models.TextField('説明', blank=True)
     is_enforce = models.BooleanField(default=True)
-    createdate = models.DateTimeField(auto_now_add=True)
+    createdate = models.DateTimeField(default=datetime.now)
     updatedate = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -34,7 +34,7 @@ class Comment(SelfPublishModel, models.Model):
     comment = models.TextField('コメント', blank=False)
     auth = models.ForeignKey('auth.User', related_name='comment')
     theme = models.ForeignKey(Theme, verbose_name='投稿先', related_name='comment')
-    createdate = models.DateTimeField(auto_now_add=True)
+    createdate = models.DateTimeField(default=datetime.now)
     good = models.IntegerField(default=0)
 
     def __str__(self):

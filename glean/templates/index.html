@@ -36,8 +36,11 @@
         </div>
         <div ng-bind="theme_item.text"></div>
         <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && register_theme_list.is_read">
+            <span ng-bind="'auther:'"></span>
             <span ng-bind="get_username(item)"></span>
-            <span>:{{item.comment}}/{{item.createdate | date: medium}}/{{item.good}}</span>
+            <span ng-bind="'/text:'"></span>
+            <span ng-bind="item.comment"></span>
+            <span ng-bind="'/date:'"></span>
             <span ng-bind="item.createdate"></span>
             <button type="button" ng-click="delete_comment(item)">delete</button>
         </li>

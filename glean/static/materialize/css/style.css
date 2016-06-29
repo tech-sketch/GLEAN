@@ -1,0 +1,105 @@
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+
+}
+
+.iconSize{
+    max-width:30px;
+}
+
+.sideBar-fixed{
+    position:fixed;
+    visibility:visible;
+    min-height:100%;
+    /*min-width:250px;*/
+}
+
+.titleBar{
+    z-index:1;
+    left:25%;
+    position:fixed;
+}
+.input-chat{
+    visibility:visible;
+    margin-left: 35%;
+}
+
+
+.chat{
+    margin-left: 35%;
+    margin-right:-30%;
+    padding-left:2%;
+}
+
+.good{
+    margin-left:0%;
+}
+
+.image{
+margin-top:2%;
+    margin-right:2%;
+}
+
+.name{
+    margin-left:0%;
+}
+
+.side-z-index{
+    z-index:2;
+}
+
+.chat-content{
+    margin-left:10%;
+}
+
+.chat-z-index{
+    z-index:0;
+}
+
+.input-chat-table{
+    margin-left:0%;
+    visibility:visible;
+}
+
+.basepage{
+    min-height:100%;
+    visibility:visible;
+}
+
+.input-border-style{
+    border-style:solid;
+    border-color:
+}
+
+.table-size{
+    height:3px;
+}
+
+.login-z-index{
+    z-index:0;
+    position:relative;
+}
+
+.login-image{
+    position:fixed;
+}
+
+.title-name{
+    z-index:1;
+    position:fixed;
+    top:40%;
+    left:10%;
+}
+
+.login-user-id{
+ z-index:1;
+    position:fixed;
+    top:53%;
+    left:6%;
+
+}
+.login-user-id-border{
+    border-style:solid;
+}

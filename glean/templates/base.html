@@ -1,10 +1,228 @@
+{% load static swampdragon_tags %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="TodoApp">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BasePage</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'materialize/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'materialize/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+    <script src="{% static 'materialize/js/Modals.js' %}"></script>
+
+    <!-- AngularJS -->
+<script type="text/javascript" src="{% static 'angular.js' %}"></script>
+
+{% swampdragon_settings %}
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/datamapper.js' %}"></script>
+<script type="text/javascript" src="{% static 'swampdragon/js/angular/services.js' %}"></script>
+
+<!-- To-do app -->
+<script type="text/javascript" src="{% static 'chat/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'chat/controllers.js' %}"></script>
+
+
 </head>
 <body>
+
+<div class="container" ng-controller="TodoListCtrl">
+
+ <div class="row basepage grey lighten-3">
+     <div class="navbar-fixed">
+     <!--サイドバ　開始ー-->
+      <div class="col s3 grey darken-3 white-text sideBar-fixed side-z-index">
+          <span>
+              <h5>
+                 <i class="material-icons">perm_identity</i>
+                  <a class="dropdown-button bun white-text" href="modal-profile" data-activates="dropdown-profile">
+                     MyName
+                  </a>
+              </h5>
+              <!-- Dropdown Structure -->
+                  <ul id='dropdown-profile' class='dropdown-content'>
+                      <div>
+                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-profile">個人設定</a></li>
+                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
+                      </div>
+                  </ul>
+          </span>
+
+          <h4>
+              #Rooms
+              <a class="dropdown-button bun right white-text" href="modal1" data-activates="dropdown1">
+                  <i class="material-icons">add</i>
+              </a>
+              <ul id='dropdown1' class="dropdown-content grey lighten-1">
+                  <div>
+                     <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal1">新規登録</a></li>
+                      <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a></li>
+                  </div>
+              </ul>
+
+          </h4>
+
+          <ul>
+              <!--
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">営業の良いところ</a></li>
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">金融業界の今後</a></li>
+              -->
+              <li ng-repeat="item in theme_list" ng-if="check_register(item)">
+                <span ng-bind="item.theme"></span>
+                <button type="button" ng-click="read_theme(item)">show</button>
+              </li>
+          </ul>
+
+          <h4>
+              #Other Rooms
+              <a class="dropdown-button bun right white-text" href="#" data-activates="dropdown1">
+                  <i class="material-icons">add</i>
+              </a>
+              <ul id='dropdown1' class="dropdown-content grey lighten-1">
+                  <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
+                        <span ng-bind="item.theme"></span>
+                        <button type="button" ng-click="read_theme(item)">show</button>
+                    </li>
+                  <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
+                  <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit2">編集</a></li>
+                  <li><a class="black-text" href="#!">編集</a></li>
+
+              </ul>
+          </h4>
+
+
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">新規作成</a></li>
+              <li class="card s3 grey darken-2"><a class="white-text" href="#!">削除</a></li>
+          </ul>
+
+      </div>
+         <!--サイドバ 終了ー-->
+
+     <!-- Modal Structure 開始-->
+     <div id="modal1" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>新規登録</h4>
+             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20" ng-model="theme.text">
+             <p>説明:</p><input type="text" name="theme_comment" value="" size="20" ng-model="comment.text">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+         </div>
+     </div>
+
+
+
+     <div id="modal-edit1" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>編集</h4>
+             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+         </div>
+     </div>
+
+     <div id="modal-edit2" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>編集</h4>
+             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+         </div>
+     </div>
+
+     <div id="modal-profile" class="modal modal-fixed-footer">
+         <div class="modal-content">
+             <h4>プロフィール</h4>
+             <p>名前:</p><input type="text" name="name" value="" size="20">
+             <p>メールアドレス:</p><input type="text" name="email_address" value="" size="20">
+             <p>パスワード:</p><input type="text" name="password" value="" size="20">
+             <p>パスワード(確認):</p><input type="text" name="password" value="" size="20">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+         </div>
+     </div>
+
+     <div id="modal-logout" class="modal">
+        <div class="modal-content">
+          <h4>ログアウトしますか？</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
+
+        </div>
+      </div>
+     <!-- Modal Structure 終了-->
+
+     <!--テーマ（タイトル）開始ー-->
+         <div class="fixedBar grey lighten-1 teal-text">
+            <nav class="grey lighten-1">
+              <div>
+                <span ng-bind="theme_item.theme"></span>
+              </div>
+            </nav>
+          </div>
+      <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index navbar-fixed">
+
+          {% block content %}
+          {% endblock %}
+      </div>
+      <!--テーマ（タイトル）終了ー-->
+
+     <!--チャット画面）開始ー-->
+     <div class="col s9 grey lighten-3 ">
+         <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && register_theme_list.is_read">
+             <div class="card hoverable white chat">
+                 <div class="container name">
+                     <span class="left-align name" mg-bind="get_username(item)"></span>
+                     <span class="right datetime" ng-bind="item.createdate"></span>
+
+                 </div>
+                 <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
+                 <div class="card-content left-align chat-content">
+                     <p class="chat-content">
+                         <span ng-bind="item.comment"></span>
+                     </p>
+                     <div>
+                         <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                         <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                     </div>
+                 </div>
+            </div>
+        </li>
+
+         </div>
+
+
+    <!--投稿欄 開始-->
+        <div class="container input-chat left">
+            <nav class="grey lighten-1">
+                    <span><input class="black-text" type="submit" value="+" ng-click="create_comment(data)"></span>
+                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="120" ng-model="data.text"></span>
+            </nav>
+
+        </div>
+
+    <!--投稿欄 終了-->
+
+     </div>
+      <!--チャット画面終了ー-->
+
+
+
+</div>
+
+
+
 
 </body>
 </html>

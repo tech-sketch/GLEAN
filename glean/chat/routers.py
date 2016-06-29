@@ -85,7 +85,7 @@ class CommentRouter(ModelRouter):
         comment.comment = kwargs['comment']
         comment.save()
 
-        print(comment.createdate)
+        # print(comment.createdate)
         # テーマ情報の更新日時を更新
         #theme = get_object_or_404(Theme, pk=kwargs["theme"])
         #theme.updatedate = datetime.now
