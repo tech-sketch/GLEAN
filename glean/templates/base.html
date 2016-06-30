@@ -1,7 +1,7 @@
 {% load static swampdragon_tags %}
 <!DOCTYPE html>
-<html ng-app="TodoApp">
-<head lang="Asia/Tokyo">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>BasePage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,23 +12,10 @@
     <script src="{% static 'materialize/js/materialize.js' %}"></script>
     <script src="{% static 'materialize/js/Modals.js' %}"></script>
 
-    <!-- AngularJS -->
-<script type="text/javascript" src="{% static 'angular.js' %}"></script>
-
-{% swampdragon_settings %}
-<script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'swampdragon/js/dist/datamapper.js' %}"></script>
-<script type="text/javascript" src="{% static 'swampdragon/js/angular/services.js' %}"></script>
-
-<!-- To-do app -->
-<script type="text/javascript" src="{% static 'chat/app.js' %}"></script>
-<script type="text/javascript" src="{% static 'chat/controllers.js' %}"></script>
-
-
 </head>
 <body>
 
-<div class="container" ng-controller="TodoListCtrl">
+<div class="container">
 
  <div class="row basepage grey lighten-3">
      <div class="navbar-fixed">
@@ -65,16 +52,8 @@
           </h4>
 
           <ul>
-              <!--
               <li class="card s3 grey darken-2"><a class="white-text" href="#!">営業の良いところ</a></li>
               <li class="card s3 grey darken-2"><a class="white-text" href="#!">金融業界の今後</a></li>
-              -->
-              <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-
-                <span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span>
-
-
-              </li>
           </ul>
 
           <h4>
@@ -83,10 +62,6 @@
                   <i class="material-icons">add</i>
               </a>
               <ul id='dropdown1' class="dropdown-content grey lighten-1">
-                  <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
-                        <span ng-bind="item.theme"></span>
-                        <button type="button" ng-click="read_theme(item)">show</button>
-                    </li>
                   <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
                   <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit2">編集</a></li>
                   <li><a class="black-text" href="#!">編集</a></li>
@@ -106,12 +81,11 @@
      <div id="modal1" class="modal modal-fixed-footer">
          <div class="modal-content">
              <h4>新規登録</h4>
-             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20" ng-model="theme.text">
-             <p>説明:</p><input type="text" name="theme_comment" value="" size="20" ng-model="comment.text">
+             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
          </div>
          <div class="modal-footer">
              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">登録</a>
          </div>
      </div>
 
@@ -125,8 +99,6 @@
              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">登録</a>
          </div>
      </div>
-
-
 
      <div id="modal-edit1" class="modal modal-fixed-footer">
          <div class="modal-content">
@@ -180,7 +152,7 @@
          <div class="fixedBar grey lighten-1 teal-text">
             <nav class="grey lighten-1">
               <div>
-                <span ng-bind="theme_item.theme"></span>
+                <h5>営業の良いところ</h5>
               </div>
             </nav>
           </div>
@@ -193,34 +165,127 @@
 
      <!--チャット画面）開始ー-->
      <div class="col s9 grey lighten-3 ">
-         <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && register_theme_list.is_read">
-             <div class="card hoverable white chat">
-                 <div class="container name">
-                     <span class="left-align name" ng-bind="get_username(item)"></span>
-                     <span class="right datetime" ng-bind="item.createdate"></span>
+         <div class="card hoverable white chat">
+             <div class="container name">
+                 <span class="left-align name">@Kikuya Takumi</span>
+                 <span class="right datetime">2016/06/28 14:32</span>
 
+             </div>
+             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>
+                     a<br>
+                     a<br>
+                     a<br>
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
                  </div>
-                 <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
-                 <div class="card-content left-align chat-content">
-                     <p class="chat-content">
-                         <span ng-bind="item.comment"></span>
-                     </p>
-                     <div>
-                         <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                         <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                     </div>
+             </div>
+
+
+
+         </div>
+
+         <div class="card hoverable white chat">
+             <div class="container name">
+                 <span class="left-align name">@Kikuya Takumi</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
+             </div>
+
+             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>a
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
                  </div>
-            </div>
-        </li>
+             </div>
+
+
+         </div>
+
+         <div class="card hoverable white chat">
+             <div class="container name">
+                 <span class="left-align name">@Kikuya Takumi</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
+             </div>
+
+             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>a
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                 </div>
+             </div>
+
 
          </div>
 
 
+         <div class="card hoverable white chat">
+             <div class="container name">
+                 <span class="left-align name">@Kikuya Takumi</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
+             </div>
+
+             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>a
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                 </div>
+             </div>
+
+
+         </div>
+
+
+         <div class="card hoverable white chat">
+             <div class="container name">
+                 <span class="left-align name">@Kikuya Takumi</span>
+                 <span class="right datetime">2016/06/28 14:55</span>
+             </div>
+
+             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
+             <div class="card-content left-align chat-content">
+                 <p class="chat-content">
+                     いろいろな<br>
+                     業界のお客さんと交流できるところ！
+                     a<br>a
+                 </p>
+                 <div>
+                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                 </div>
+             </div>
+
+
+         </div>
+
     <!--投稿欄 開始-->
         <div class="container input-chat left">
             <nav class="grey lighten-1">
-                    <span><input class="black-text" type="submit" value="+" ng-click="create_comment(data)"></span>
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="120" ng-model="data.text"></span>
+                    <span><input class="black-text" type="submit" value="+"></span>
+                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="120"></span>
             </nav>
 
         </div>
