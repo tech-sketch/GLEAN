@@ -1,10 +1,23 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ログアウト</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-{% block title %}logout{% endblock title %}
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script src="materialize/js/Modals.js"></script>
 
-{% block content %}
+</head>
+<body>
+<img src="https://www.pakutaso.com/shared/img/thumb/C789_pentonotepc_TP_V.jpg" width="100%" height="100%" class="logout-image">
+<div class="logout-info">
+    <h2>ログアウトしました！</h2>
+</div>
+    <a href="Login.html"><input class="blue white-text logout-login" type="submit" value="ログインページ"></a>
 
-    <h3 class="page-header">ログアウトしました</h3>
-    <a href="{% url 'login' %}"> ログインページへ </a>
-
-{% endblock content %}
+</body>
+</html>

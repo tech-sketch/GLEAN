@@ -13,3 +13,12 @@ $('#modal-edit1').closeModal();
 
 $('#modal-edit2').openModal();
 $('#modal-edit2').closeModal();
+
+$('#modal-profile').openModal();
+$('#modal-profile').closeModal();
+
+$('#modal-logout').openModal();
+$('#modal-logout').closeModal();
+
+$('#modal-signup').openModal();
+$('#modal-signup').closeModal();
