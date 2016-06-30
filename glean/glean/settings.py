@@ -119,4 +119,8 @@ DRAGON_URL = 'http://localhost:9999/'
 
 LOGIN_REDIRECT_URL = '/chat/'
 
+LOGIN_URL = '/login'
+LOGOUT_URL = '/logout'
+LOGIN_REDIRECT_URL = '/base'
+
 
