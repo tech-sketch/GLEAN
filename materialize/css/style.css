@@ -1,0 +1,198 @@
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+
+}
+
+.iconSize{
+    max-width:30px;
+}
+
+.sideBar-fixed{
+    position:fixed;
+    visibility:visible;
+    min-height:100%;
+    min-width:25%;
+}
+
+.fixedBar{
+    z-index:1;
+    left:25%;
+    position:relative;
+}
+
+,fixedBar nav{
+    position:fixed;
+}
+.input-chat{
+    visibility:visible;
+    /*margin-left: 35%;*/
+    position:relative;
+
+    left:35%;
+}
+
+.input-chat nav{
+    bottom:0;
+    position:fixed;
+}
+
+
+
+
+
+.chat{
+    margin-left: 35%;
+    margin-right:-30%;
+    padding-left:2%;
+}
+
+.good{
+    margin-left:0%;
+}
+
+.image{
+margin-top:2%;
+    margin-right:2%;
+}
+
+.name{
+    padding-top:1%;
+    padding-left:0%;
+}
+
+.side-name{
+    padding-left:2%;
+}
+
+.datetime{
+    padding-top:1%;
+    padding-right:3%;
+}
+
+.side-z-index{
+    z-index:2;
+}
+
+.chat-content{
+    margin-left:10%;
+}
+
+.chat-z-index{
+    z-index:0;
+}
+
+
+
+.basepage{
+    min-height:100%;
+    visibility:visible;
+}
+
+.input-border-style{
+    border-style:solid;
+    border-color:
+}
+
+.table-size{
+    height:3px;
+}
+
+.login-z-index{
+    z-index:0;
+    position:relative;
+}
+
+.login-image{
+    position:fixed;
+}
+
+.logout-image{
+    position:fixed;
+}
+
+
+.title-name{
+    z-index:1;
+    position:fixed;
+    top:40%;
+    left:10%;
+}
+
+
+.dropdown-content {
+  background-color: #fff;
+  margin: 0;
+  display: none;
+  min-width: 120px;
+  max-height: 650px;
+  overflow-y: auto;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  will-change: width, height;
+}
+.login-user-info{
+    z-index:1;
+    position:fixed;
+    top:53%;
+    left:6%;
+}
+
+.logout-info{
+    z-index:1;
+    position:fixed;
+    top:30%;
+    left:20%;
+    font-style:italic;
+}
+
+
+.login-input{
+    border-style:solid;
+}
+
+.sign-up{
+    position:fixed;
+    top:72%;
+    left:25%;
+    z-index:1;
+}
+
+.logout-login{
+    z-index:1;
+    position:fixed;
+    top:70%;
+    left:60%;
+}
+
+.all-theme{
+    position:fixed;
+    visibility:visible;
+    min-height:100%;
+    width:100%;
+
+    left:25%;
+}
+
+.participate{
+    width:40%;
+    position:fixed;
+    left:26%;
+    top:8%;
+}
+
+.not-participate{
+    width:40%;
+    left:60%;
+    top:8%;
+    position:fixed;
+    z-index:5;
+}
+
+.themes{
+    width:80%;
+}
+
+
