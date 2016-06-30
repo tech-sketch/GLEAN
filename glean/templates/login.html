@@ -1,6 +1,6 @@
 {% load static swampdragon_tags %}
 <!DOCTYPE html>
-<html lang="en" ng-app="TodoApp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>ログインページ</title>
@@ -38,6 +38,7 @@
     <a href="Base.html"><input class="green white-text" type="submit" value="ログイン"></a>
 </div>
 <a class="modal-trigger waves-effect waves-light white-text blue sign-up " href="#modal-signup">新規登録</a>
+</form>
 
 <div id="modal-signup" class="modal modal-fixed-footer" ng-controller="TodoListCtrl">
          <div class="modal-content">
@@ -52,6 +53,5 @@
              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text", ng-click="create_user(username, mailaddress, password)">登録</a>
          </div>
      </div>
-    </form>
 </body>
 </html>

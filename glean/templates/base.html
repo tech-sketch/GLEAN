@@ -37,7 +37,7 @@
               <h5>
                  <i class="material-icons">perm_identity</i>
                   <a class="dropdown-button bun white-text" href="modal-profile" data-activates="dropdown-profile" ng-bind="user.username">
-                     
+
                   </a>
               </h5>
               <!-- Dropdown Structure -->
@@ -82,9 +82,10 @@
               </ul>
           </h4>
 
-
-              <li class="card s3 grey darken-2"><a class="white-text" href="#!">新規作成</a></li>
-              <li class="card s3 grey darken-2"><a class="white-text" href="#!">削除</a></li>
+            <ul>
+              <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
+                <span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span>
+              </li>
           </ul>
 
       </div>
