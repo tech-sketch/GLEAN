@@ -21,6 +21,13 @@ class UserRouter(ModelRouter):
     def get_query_set(self, **kwargs):
         return User.objects.all()
 
+    def create(self, **kwargs):
+        # print(kwargs['username'])
+        user = User(username=kwargs['username'])
+        user.set_password(kwargs['password'])
+        user.save()
+        # print(user.password)
+
 class ThemeRouter(ModelRouter):
     route_name = 'route-theme'
     serializer_class = ThemeSerializer
