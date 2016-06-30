@@ -142,8 +142,6 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
         //console.log(theme)
         $dragon.delete('route-theme', {theme:theme_item.id});
         $scope.theme_item = "";
-
-
     }
     //  is_readフラグの状態を調べる
     //  読込が終わっていないタイミングで動いて、終わったタイミングで再度動いているみたい
@@ -155,7 +153,13 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
                 return $scope.register_user_list[i].is_read;
         }
         return false;
-
+    }
+    $scope.create_user = function(username, mailaddress, password) {
+        // console.log(1);
+        $dragon.create('route-user', {username:username.text, mailaddress:mailaddress.text, password:password.text});
+    }
+    $scope.func = function() {
+        console.log(1);
     }
 
     $scope.get_theme_list_order = function() {
