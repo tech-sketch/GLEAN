@@ -83,9 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gleandb',
-        'USER':'glean',
+        'USER': 'glean',
         'PASSWORD': glean.ex_password.db_password,
-        'HOST':'localhost',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
@@ -102,7 +102,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
