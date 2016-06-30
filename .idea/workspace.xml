@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddda62a2-210a-487b-8b62-8674fce96e60" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/glean/chat/migrations/0002_auto_20160629_1403.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/glean/requirements.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/chat/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/glean/chat/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/static/materialize/css/style.css" afterPath="$PROJECT_DIR$/glean/static/materialize/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/static/materialize/js/Modals.js" afterPath="$PROJECT_DIR$/glean/static/materialize/js/Modals.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/templates/base.html" afterPath="$PROJECT_DIR$/glean/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/templates/index.html" afterPath="$PROJECT_DIR$/glean/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/templates/logout.html" afterPath="$PROJECT_DIR$/glean/templates/logout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glean/templates/login.html" afterPath="$PROJECT_DIR$/glean/templates/login.html" />
     </list>
     <ignored path="team_development.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routers.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/glean/chat/routers.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -64,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/glean/static/chat/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="15" />
+            <state relative-caret-position="476">
+              <caret line="157" column="11" selection-start-line="157" selection-start-column="11" selection-end-line="157" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -101,8 +96,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/glean/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="34">
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -111,8 +106,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/glean/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -159,13 +154,13 @@
         <option value="$PROJECT_DIR$/glean/templates/index.html" />
         <option value="$PROJECT_DIR$/glean/chat/models.py" />
         <option value="$PROJECT_DIR$/glean/chat/views.py" />
-        <option value="$PROJECT_DIR$/glean/static/chat/controllers.js" />
-        <option value="$PROJECT_DIR$/glean/templates/login.html" />
         <option value="$PROJECT_DIR$/glean/glean/urls.py" />
         <option value="$PROJECT_DIR$/glean/glean/settings.py" />
         <option value="$PROJECT_DIR$/glean/templates/base.html" />
         <option value="$PROJECT_DIR$/glean/chat/serializers.py" />
         <option value="$PROJECT_DIR$/glean/chat/routers.py" />
+        <option value="$PROJECT_DIR$/glean/templates/login.html" />
+        <option value="$PROJECT_DIR$/glean/static/chat/controllers.js" />
       </list>
     </option>
   </component>
@@ -682,14 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/glean/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/glean/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -718,22 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/glean/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/glean/static/chat/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/glean/chat/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -749,6 +720,30 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glean/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glean/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glean/static/chat/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="157" column="11" selection-start-line="157" selection-start-column="11" selection-end-line="157" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
