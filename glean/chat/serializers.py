@@ -12,10 +12,10 @@ class CommentSerializer(ModelSerializer):
     class Meta:
         model = 'chat.Comment'
         # フロントから参照することのできる情報の定義
-        publish_fields = ('comment', 'theme', 'auth', 'good')
+        publish_fields = ('comment', 'theme', 'auth', 'good', 'createdate')
         # フロントから更新することのできる情報の定義
         # フロントからcreateなどするときに、最低限渡す必要がある情報
-        update_fields = ('comment', 'theme', 'auth', 'good', )
+        update_fields = ('comment', 'theme', 'auth', 'good', 'createdate', )
 
 
 class ThemeSerializer(ModelSerializer):

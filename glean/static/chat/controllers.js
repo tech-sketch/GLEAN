@@ -175,4 +175,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
         // ユーザーidは1から始まるが、フロント側のリストは0から始まっているため、ずれを吸収する必要がある
         return $scope.user_list[item.auth-1].username;
     }
+    $scope.get_datetime = function(item) {
+        return String(item.datetime);
+    }
 }]);

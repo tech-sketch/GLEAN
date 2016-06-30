@@ -185,7 +185,7 @@
          <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && register_theme_list.is_read">
              <div class="card hoverable white chat">
                  <div class="container name">
-                     <span class="left-align name" mg-bind="get_username(item)"></span>
+                     <span class="left-align name" ng-bind="get_username(item)"></span>
                      <span class="right datetime" ng-bind="item.createdate"></span>
 
                  </div>
