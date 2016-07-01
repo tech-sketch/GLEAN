@@ -1,0 +1,57 @@
+{% load static swampdragon_tags %}
+<!DOCTYPE html>
+<html lang="ja" ng-app="TodoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ログインページ</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'materialize/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'materialize/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+    <script src="{% static 'materialize/js/Modals.js' %}"></script>
+
+    <!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+{% swampdragon_settings %}
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/datamapper.js' %}"></script>
+<script type="text/javascript" src="{% static 'swampdragon/js/angular/services.js' %}"></script>
+
+<!-- To-do app -->
+<script type="text/javascript" src="{% static 'chat/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'chat/controllers.js' %}"></script>
+
+</head>
+<body>
+<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+    {% csrf_token %}
+<img src="https://www.pakutaso.com/shared/img/thumb/PAK58_kiokuyorikiroku_TP_V1.jpg" width="100%" height="100%" class="login-image">
+<h1 class="green-text title-name"><strong>GLEAN</strong></h1>
+<div class="login-user-info">
+    <span><h6>ユーザID:</h6></span>
+    <span><td>{{ form.username }}</td></span>
+    <span><h6>パスワード:</h6></span>
+    <span><td>{{ form.password }}</td></span>
+    <a href="Base.html"><input class="green white-text" type="submit" value="ログイン"></a>
+</div>
+<a class="modal-trigger waves-effect waves-light white-text blue sign-up " href="#modal-signup">新規登録</a>
+</form>
+
+<div id="modal-signup" class="modal modal-fixed-footer" ng-controller="TodoListCtrl">
+         <div class="modal-content">
+             <h4>新規登録</h4>
+             <p>ユーザ名:</p><input type="text" value="" size="20" ng-model="username.text">
+             <p>メールアドレス:</p><input type="text" value="" size="20" ng-model="mailaddress.text">
+             <p>パスワード:</p><input type="password" value="" size="20" ng-model="password.text">
+             <p>パスワード(確認):</p><input type="password" value="" size="20" ng-model="password2.text">
+         </div>
+         <div class="modal-footer">
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_user(username, mailaddress, password)">登録</a>
+         </div>
+     </div>
+</body>
+</html>

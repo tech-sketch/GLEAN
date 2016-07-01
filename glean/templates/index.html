@@ -1,0 +1,77 @@
+{% load static swampdragon_tags %}
+{% load tz %}
+<!DOCTYPE html>
+<html ng-app="TodoApp">
+<head lang="Asia/Tokyo">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% verbatim %}
+<div ng-controller="TodoListCtrl">
+    <div ng-bind="user.username"></div>
+    <!--
+    <input type="number" ng-model="theme.number"/>
+    <button type="button" ng-click="set_theme(theme)">
+        <div ng-bind="'go'"></div>
+    </button>
+    <button type="button" ng-click="delete_theme(theme)" ng-bind="'delete'"></button>
+    -->
+    <div ng-bind="'commented themes'"></div>
+    <!--<li ng-repeat="item in theme_list" ng-if="register_user_list[theme=item.id].is_read">-->
+    <li ng-repeat="item in theme_list" ng-if="check_register(item)">
+        <span>{{item.theme}}</span>
+        <button type="button" ng-click="read_theme(item)">show</button>
+
+    </li>
+    <div ng-bind="'not commented themes'"></div>
+    <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
+        <span>{{item.theme}}</span>
+        <button type="button" ng-click="read_theme(item)">show</button>
+    </li>
+
+    <ul>
+        <div>
+            <span ng-bind="theme_item.theme"></span>
+            <button type="button" ng-click="delete_theme(theme_item)" ng-bind="'delete'"></button>
+        </div>
+        <div ng-bind="theme_item.text"></div>
+        <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && register_theme_list.is_read">
+            <span ng-bind="'auther:'"></span>
+            <span ng-bind="get_username(item)"></span>
+            <span ng-bind="'/text:'"></span>
+            <span ng-bind="item.comment"></span>
+            <span ng-bind="'/date:'"></span>
+            <span ng-bind="item.createdate"></span>
+            <button type="button" ng-click="delete_comment(item)">delete</button>
+        </li>
+    </ul>
+        <div></div>
+        <input type="text" ng-model="data.text" placeholder="add your comment"/>
+        <button type="button" ng-click="create_comment(data)">
+            <div ng-bind="'add'"></div>
+        </button>
+
+        <div><input type="text" ng-model="theme.text" placeholder="new theme here"/></div>
+        <div><input type="text" ng-model="comment.text" placeholder="new theme description here"/></div>
+        <button type="button" ng-click="create_theme(theme, comment)">
+            <div ng-bind="'create'"></div>
+        </button>
+    </li>
+</div>
+{% endverbatim %}
+
+<!-- AngularJS -->
+<script type="text/javascript" src="{% static 'angular.js' %}"></script>
+
+{% swampdragon_settings %}
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/datamapper.js' %}"></script>
+<script type="text/javascript" src="{% static 'swampdragon/js/angular/services.js' %}"></script>
+
+<!-- To-do app -->
+<script type="text/javascript" src="{% static 'chat/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'chat/controllers.js' %}"></script>
+
+</body>
+</html>
