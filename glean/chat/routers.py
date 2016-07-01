@@ -19,6 +19,7 @@ class UserRouter(ModelRouter):
             return self.model.objects.filter(pk=kwargs['user'])
 
     def get_query_set(self, **kwargs):
+        # print(User.objects.all())
         return User.objects.all()
 
     def create(self, **kwargs):
@@ -97,6 +98,11 @@ class CommentRouter(ModelRouter):
         #theme = get_object_or_404(Theme, pk=kwargs["theme"])
         #theme.updatedate = datetime.now
         #theme.save()
+
+    def update(self, **kwargs):
+        comment = get_object_or_404(Comment, pk=kwargs['comment'])
+        comment.good = comment.good + 1
+        comment.save()
 
 
 class ThemeRegisterRouter(ModelRouter):
