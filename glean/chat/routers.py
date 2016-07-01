@@ -74,7 +74,7 @@ class CommentRouter(ModelRouter):
         return self.model.objects.get(pk=kwargs['id'])
 
     def get_query_set(self, **kwargs):
-        return self.model.objects.filter(theme=kwargs['theme'])
+        return self.model.objects.filter(theme=kwargs['theme']).order_by('createdate')
 
     def create(self, **kwargs):
         # コメントフラグの管理
