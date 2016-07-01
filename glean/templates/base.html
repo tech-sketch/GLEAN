@@ -44,7 +44,7 @@
                   <ul id='dropdown-profile' class='dropdown-content'>
                       <div>
                           <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-profile">個人設定</a></li>
-                          <li><a class="modal-trigger waves-effect waves-light black-text" href="{% url 'logout' %}">ログアウト</a></li>
+                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
                       </div>
                   </ul>
           </span>
@@ -156,7 +156,7 @@
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
+             <a href="{% url 'logout' %}" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
 
         </div>
       </div>

@@ -130,7 +130,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     }
     // テーマ情報の更新
     $scope.update_theme = function(theme, comment) {
-        dragon.update('route-theme', {id:$scope.theme_id, theme:theme.text, text:comment.text, auth:$scope.user.id, is_enforce:true})
+        dragon.update('route-theme', {id:$scope.theme_id, theme:theme.text, text:comment.text, auth:$scope.user.id})
     }
     // コメントの削除
     $scope.delete_comment = function(item) {

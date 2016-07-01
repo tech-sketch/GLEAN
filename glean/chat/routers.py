@@ -41,7 +41,7 @@ class ThemeRouter(ModelRouter):
         return self.model.objects.all()
 
     def create(self, **kwargs):
-        theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']), is_enforce=True)
+        theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']), is_enforce=kwargs['is_enforce'])
         theme.save()
 
     def delete(self, **kwargs):
@@ -74,7 +74,7 @@ class CommentRouter(ModelRouter):
         return self.model.objects.get(pk=kwargs['id'])
 
     def get_query_set(self, **kwargs):
-        return self.model.objects.filter(theme=kwargs['theme'])
+        return self.model.objects.filter(theme=kwargs['theme']).order_by('createdate')
 
     def create(self, **kwargs):
         # コメントフラグの管理
