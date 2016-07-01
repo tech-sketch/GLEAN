@@ -41,7 +41,7 @@ class ThemeRouter(ModelRouter):
         return self.model.objects.all()
 
     def create(self, **kwargs):
-        theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']), is_enforce=True)
+        theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']), is_enforce=kwargs['is_enforce'])
         theme.save()
 
     def delete(self, **kwargs):
