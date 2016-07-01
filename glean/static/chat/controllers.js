@@ -26,7 +26,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.theme_list_order = [];
     $scope.register_theme_list = [];
     $scope.theme_item = "";
-    $scope.theme_id = 1;
+    $scope.theme_id = 0;
     $scope.user_list = [];
     $scope.comment_channel = 'comments';
     $scope.theme_channel = 'themes';
@@ -49,7 +49,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
         });
         $dragon.getList('route-user', {}).then(function(response) {
             $scope.user_list = response.data;
-            // console.log($scope.user_list);
+            // console.log($scope.user_list[1].id);
         });
         $dragon.getList('route-register', {theme:""}).then(function(response) {
             $scope.register_user_list = response.data;
@@ -176,10 +176,22 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.get_username = function(item) {
         // console.log(item.auth);
         // console.log($scope.user_list[item.auth-1]);
-        // ユーザーidは1から始まるが、フロント側のリストは0から始まっているため、ずれを吸収する必要がある
-        return $scope.user_list[item.auth-1].username;
+        if(item.length < 1){
+            return ;
+        }
+        // console.log($scope.user_list[0].username);
+        // console.log($scope.user_list.length, item.auth);
+
+        for(var i=0;i<$scope.user_list.length;i++){
+            if($scope.user_list[i].id == item.auth){
+                return $scope.user_list[i].username;
+            }
+        }
     }
     $scope.get_datetime = function(item) {
         return String(item.datetime);
+    }
+    $scope.update_comment_good = function(item) {
+        $dragon.update('route-comment', {comment:item.id});
     }
 }]);
