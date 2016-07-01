@@ -15,10 +15,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    url(r'^chat', TemplateView.as_view(template_name='index.html'), name='home'),
-    url(r'^base', TemplateView.as_view(template_name='base.html'), name='base'),
+    url(r'^chat', login_required(TemplateView.as_view(template_name='index.html')), name='home'),
+    url(r'^base', login_required(TemplateView.as_view(template_name='base.html')), name='base'),
     url(r'^login', 'django.contrib.auth.views.login', kwargs={'template_name': 'login.html'}, name='login'),
     url(r'^logout', 'django.contrib.auth.views.logout_then_login', kwargs={'login_url': 'login'}, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
