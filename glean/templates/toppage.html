@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BasePage</title>
+    <title>トップページ</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -14,11 +14,7 @@
 </head>
 <body>
 
-<div class="container">
-
- <div class="row basepage grey lighten-3">
-     <div class="navbar-fixed">
-          <!--サイドバ　開始ー-->
+     <!--サイドバ　開始ー-->
       <div class="col s3 grey darken-3 white-text sideBar-fixed side-z-index">
           <span>
               <h5>
@@ -147,166 +143,46 @@
       </div>
      <!-- Modal Structure 終了-->
 
+    <!-- テーマ一覧画面 終了-->
+     <div class="all-theme grey lighten-1 white-text">
+         <h4>テーマ一覧</h4>
 
-     <!--テーマ（タイトル）開始ー-->
-         <div class="fixedBar grey lighten-1 teal-text">
-            <nav class="grey lighten-1">
-              <div>
-                <h5>営業の良いところ</h5>
-              </div>
-            </nav>
-          </div>
+         <span class="participate ">
+             <h4>参加済み</h4>
+             <ul class="collapsible themes black-text" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header">営業の良いところ</div>
+                  <div class="collapsible-body grey lighten-3"><p>最新コメント</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header">金融業界の今後</div>
+                  <div class="collapsible-body grey lighten-3"><p>最新コメント</p></div>
+                </li>
 
-          <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index navbar-fixed">
+              </ul>
+         </span>
 
-              {% block content %}
-              {% endblock %}
-          </div>
-      <!--テーマ（タイトル）終了ー-->
-
-     <!--チャット画面）開始ー-->
-     <div class="col s9 grey lighten-3 ">
-         <div class="card hoverable white chat">
-             <div class="container name">
-                 <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right datetime">2016/06/28 14:32</span>
-
-             </div>
-             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
-             <div class="card-content left-align chat-content">
-                 <p class="chat-content">
-                     いろいろな<br>
-                     業界のお客さんと交流できるところ！
-                     a<br>
-                     a<br>
-                     a<br>
-                     a<br>
-                 </p>
-                 <div>
-                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                 </div>
-             </div>
-                  <!--{% block content %}
-                  {% endblock %}-->
-
-
-         </div>
-
-         <div class="card hoverable white chat">
-             <div class="container name">
-                 <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right datetime">2016/06/28 14:55</span>
-             </div>
-
-             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
-             <div class="card-content left-align chat-content">
-                 <p class="chat-content">
-                     いろいろな<br>
-                     業界のお客さんと交流できるところ！
-                     a<br>a
-                 </p>
-                 <div>
-                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                 </div>
-             </div>
-
-                  <!--{% block content %}
-                  {% endblock %}-->
-         </div>
-
-         <div class="card hoverable white chat">
-             <div class="container name">
-                 <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right datetime">2016/06/28 14:55</span>
-             </div>
-
-             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
-             <div class="card-content left-align chat-content">
-                 <p class="chat-content">
-                     いろいろな<br>
-                     業界のお客さんと交流できるところ！
-                     a<br>a
-                 </p>
-                 <div>
-                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                 </div>
-             </div>
-
-                  <!--{% block content %}
-                  {% endblock %}-->
-         </div>
-
-
-         <div class="card hoverable white chat">
-             <div class="container name">
-                 <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right datetime">2016/06/28 14:55</span>
-             </div>
-
-             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
-             <div class="card-content left-align chat-content">
-                 <p class="chat-content">
-                     いろいろな<br>
-                     業界のお客さんと交流できるところ！
-                     a<br>a
-                 </p>
-                 <div>
-                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                 </div>
-             </div>
-
-                  <!--{% block content %}
-                  {% endblock %}-->
-         </div>
-
-
-         <div class="card hoverable white chat">
-             <div class="container name">
-                 <span class="left-align name">@Kikuya Takumi</span>
-                 <span class="right datetime">2016/06/28 14:55</span>
-             </div>
-
-             <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/ELL89_momijinotex1322_TP_V1.jpg" width="80" height="80"></div>
-             <div class="card-content left-align chat-content">
-                 <p class="chat-content">
-                     いろいろな<br>
-                     業界のお客さんと交流できるところ！
-                     a<br>a
-                 </p>
-                 <div>
-                     <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                     <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                 </div>
-             </div>
-
-                  <!--{% block content %}
-                  {% endblock %}-->
-         </div>
-
-    <!--投稿欄 開始-->
-        <div class="container input-chat left">
-            <nav class="grey lighten-1">
-                    <span><input class="black-text" type="submit" value="+"></span>
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="120"></span>
-            </nav>
-
-        </div>
-
-    <!--投稿欄 終了-->
-
+         <span class="not-participate ">
+             <h4>未参加</h4>
+             <ul class="collapsible themes black-text" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header">First</div>
+                  <div class="collapsible-body grey lighten-3"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Second</div>
+                  <div class="collapsible-body grey lighten-3"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header">Third</div>
+                  <div class="collapsible-body grey lighten-3"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+              </ul>
+         </span>
      </div>
-      <!--チャット画面終了ー-->
 
 
-
-</div>
-
-
-
+    <!-- テーマ一覧画面 終了 -->
 
 </body>
 </html>
