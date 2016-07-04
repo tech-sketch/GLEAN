@@ -26,6 +26,7 @@ class UserRouter(ModelRouter):
         # print(kwargs['username'])
         user = User(username=kwargs['username'])
         user.set_password(kwargs['password'])
+        user.email = kwargs['mailaddress']
         user.save()
         # print(user.password)
 
