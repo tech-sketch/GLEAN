@@ -82,7 +82,7 @@
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
 
-                        <h5><span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
+                        <h5><span class="button card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
                         <!--
                         <h5><li>
                             <a class="modal-trigger card s3 grey darken-2 white-text" href="#modal-comment1" ng-bind="item.theme">
@@ -208,7 +208,7 @@
         <div class="modal-content">
             <h4>プロフィール</h4>
             <p>名前:</p><input type="text" value="" size="20" ng-bind="user.username">
-            <p>メールアドレス:</p><input type="text" value="" size="20" ng-bind="user.,mailaddres">
+            <p>メールアドレス:</p><input type="text" value="" size="20" ng-bind="user.,mailaddress">
             <p>パスワード:</p><input type="password" value="" size="20" ng-bind="user.password">
             <p>パスワード(確認):</p><input type="password" value="" size="20">
         </div>
