@@ -22,3 +22,6 @@ $('#modal-logout').closeModal();
 
 $('#modal-signup').openModal();
 $('#modal-signup').closeModal();
+
+$('#modal-comment1').openModal();
+$('#modal-comment1').closeModal();
