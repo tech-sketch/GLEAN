@@ -49,6 +49,7 @@
 
                  <h4>
                      参加済み
+                     <!--
                      <a class="dropdown-button bun right white-text" href="modal1" data-activates="dropdown1">
                          <i class="material-icons">add</i>
                      </a>
@@ -58,11 +59,12 @@
                              <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a></li>
                          </div>
                      </ul>
+                     -->
                  </h4>
 
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-                        <span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span>
+                        <h5><span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
                      </li>
                  </ul>
 
@@ -74,90 +76,31 @@
                      <ul id='dropdown1' class="dropdown-content grey lighten-1">
                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit2">編集</a></li>
-                         <li><a class="black-text" href="#!">編集</a></li>
                      </ul>
                  </h4>
 
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
-                        <span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span>
+
+                        <h5><span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
+                        <!--
+                        <h5><li>
+                            <a class="modal-trigger card s3 grey darken-2 white-text" href="#modal-comment1" ng-bind="item.theme">
+
+                            </a>
+                        </li></h5>
+                        -->
                      </li>
                  </ul>
             </div>
             <!--サイドバ 終了ー-->
-            <!-- Modal Structure 開始-->
-            <div id="modal1" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>新規登録</h4>
-                    <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">登録</a>
-                </div>
-            </div>
-            <div id="modal2" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>新規登録</h4>
-                    <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">登録</a>
-                </div>
-            </div>
-            <div id="modal-edit1" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>編集</h4>
-                    <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
-                </div>
-            </div>
-
-            <div id="modal-edit2" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>編集</h4>
-                    <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
-                </div>
-            </div>
-
-            <div id="modal-profile" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>プロフィール</h4>
-                    <p>名前:</p><input type="text" name="name" value="" size="20">
-                    <p>メールアドレス:</p><input type="text" name="email_address" value="" size="20">
-                    <p>パスワード:</p><input type="text" name="password" value="" size="20">
-                    <p>パスワード(確認):</p><input type="text" name="password" value="" size="20">
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
-                </div>
-            </div>
-
-            <div id="modal-logout" class="modal">
-                <div class="modal-content">
-                    <h4>ログアウトしますか？</h4>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-                    <a href="{% url 'logout' %}" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
-                </div>
-            </div>
-            <!-- Modal Structure 終了-->
 
             <!--テーマ（タイトル）開始ー-->
             <div class="fixedBar grey lighten-1 teal-text">
                 <nav class="grey lighten-1">
                     <div>
                         <h5><span ng-bind="theme_item.theme"></span></h5>
+                        <div><h6><span ng-bind="theme_item.text"></span></h6></div>
                     </div>
                 </nav>
             </div>
@@ -191,18 +134,101 @@
                 </li>
             </div>
 
-                <!--投稿欄 開始-->
-                <div class="container input-chat left">
-                    <nav class="grey lighten-1">
-                        <span><input class="black-text" type="submit" value="+" ng-click="create_comment(data)"></span>
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="60" ng-model="data.text"></span>
-                    </nav>
-                </div>
-                <!--投稿欄 終了-->
+            <!--投稿欄 開始-->
+            <div class="container input-chat left">
+                <nav class="grey lighten-1">
+                    <span><input class="black-text" type="submit" value="+" ng-click="create_comment(data)"></span>
+                <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="60" ng-model="data.text"></span>
+                </nav>
             </div>
-            <!--チャット画面終了ー-->
+            <!--投稿欄 終了-->
         </div>
+        <!--チャット画面終了ー-->
     </div>
 </div>
 </body>
+<div class="dialogs" ng-controller="TodoListCtrl">
+    <!--ダイアログ定義-->
+    <div id="modal-logout" class="modal">
+        <div class="modal-content">
+            <h4>ログアウトしますか？</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="{% url 'logout' %}" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
+        </div>
+    </div>
+
+    <!-- Modal Structure 開始-->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>新規登録</h4>
+            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text">
+            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+        </div>
+    </div>
+    <div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>新規登録</h4>
+            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text">
+            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+        </div>
+    </div>
+    <div id="modal-edit1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>編集</h4>
+            <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+        </div>
+    </div>
+
+    <div id="modal-edit2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>編集</h4>
+            <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+        </div>
+    </div>
+
+    <div id="modal-profile" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>プロフィール</h4>
+            <p>名前:</p><input type="text" value="" size="20" ng-bind="user.username">
+            <p>メールアドレス:</p><input type="text" value="" size="20" ng-bind="user.,mailaddres">
+            <p>パスワード:</p><input type="password" value="" size="20" ng-bind="user.password">
+            <p>パスワード(確認):</p><input type="password" value="" size="20">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+        </div>
+    </div>
+    <div id="modal-comment1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>コメントしてみませんか？</h4>
+            <p>コメント:</p><input type="text"value="" size="20" ng-model="data.text">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_comment(data)">登録</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Structure 終了-->
+
 </html>
