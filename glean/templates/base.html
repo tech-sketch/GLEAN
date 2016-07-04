@@ -1,15 +1,28 @@
+{% load static swampdragon_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>BasePage</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'materialize/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'materialize/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="materialize/js/materialize.js"></script>
-    <script src="materialize/js/Modals.js"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+    <script src="{% static 'materialize/js/Modals.js' %}"></script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    {% swampdragon_settings %}
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/datamapper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'swampdragon/js/angular/services.js' %}"></script>
+
+    <!-- To-do app -->
+    <script type="text/javascript" src="{% static 'chat/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'chat/controllers.js' %}"></script>
 
 </head>
 <body>
