@@ -79,20 +79,23 @@ class CommentRouter(ModelRouter):
 
     def create(self, **kwargs):
         # コメントフラグの管理
-        auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']), theme=get_object_or_404(Theme, pk=kwargs['theme']))
-        if auth.is_read:
-            # print(auth.user)
-            pass
+        if kwargs["comment"] != "":
+            auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']), theme=get_object_or_404(Theme, pk=kwargs['theme']))
+            if auth.is_read:
+                # print(auth.user)
+                pass
+            else:
+                # print(auth.user)
+                auth.is_read = True
+            auth.save()
+            # コメント情報をデータベースに登録
+            comment = Comment()
+            comment.theme = get_object_or_404(Theme, pk=kwargs['theme'])
+            comment.auth = get_object_or_404(User, pk=kwargs['auth'])
+            comment.comment = kwargs['comment']
+            comment.save()
         else:
-            # print(auth.user)
-            auth.is_read = True
-        auth.save()
-        # コメント情報をデータベースに登録
-        comment = Comment()
-        comment.theme = get_object_or_404(Theme, pk=kwargs['theme'])
-        comment.auth = get_object_or_404(User, pk=kwargs['auth'])
-        comment.comment = kwargs['comment']
-        comment.save()
+            pass
 
         # print(comment.createdate)
         # テーマ情報の更新日時を更新
