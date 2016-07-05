@@ -92,3 +92,4 @@ ENV/
 # Password file
 ex_password.py
 .idea/
+.idea/workspace.xml
