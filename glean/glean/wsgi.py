@@ -12,7 +12,7 @@ import site
 import sys
 from django.core.wsgi import get_wsgi_application
 
-# python仮想環境のインストール済みパッケージディレクトリ
+# python virtualenv dir
 site.addsitedir("/var/www/cgi-bin/virtualenv/lib/python3.4/site-packages")
 
 sys.path.append('/var/www/cgi-bin/GLEAN')
@@ -22,7 +22,6 @@ sys.path.append('/var/www/cgi-bin/GLEAN/glean/chat')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "glean.settings")
 
-# 仮想環境の実行パス
 activate_env = os.path.expanduser("/var/www/cgi-bin/virtualenv/bin/activate_this.py")
 # execfile(activate_env, dict(__file__=activate_env))
 '''
