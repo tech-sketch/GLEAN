@@ -15,8 +15,10 @@ from django.core.wsgi import get_wsgi_application
 # python仮想環境のインストール済みパッケージディレクトリ
 site.addsitedir("/home/glean/virtualenv/lib/python3.4/ste-packages")
 
-sys.path.append('/var/www/cgi-bin/GLEAN')
-sys.path.append('/var/www/cgi-bin/GLEAN/glean')
+sys.path.append('/home/glean/git-repos/GLEAN')
+sys.path.append('/home/glean/git-repos/GLEAN/glean')
+sys.path.append('/home/glean/git-repos/GLEAN/glean/glean')
+sys.path.append('/home/glean/git-repos/GLEAN/glean/chat')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "glean.settings")
 
