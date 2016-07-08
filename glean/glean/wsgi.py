@@ -17,6 +17,6 @@ sys.path.append('/var/www/cgi-bin/GLEAN/glean')
 sys.path.append('/var/www/cgi-bin/GLEAN/glean/glean')
 sys.path.append('/var/www/cgi-bin/GLEAN/glean/chat')
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "glean.settings")
 
 application = get_wsgi_application()
