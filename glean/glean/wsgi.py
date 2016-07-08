@@ -20,7 +20,7 @@ sys.path.append('/var/www/cgi-bin/GLEAN/glean')
 sys.path.append('/var/www/cgi-bin/GLEAN/glean/glean')
 sys.path.append('/var/www/cgi-bin/GLEAN/glean/chat')
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "glean.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 activate_env = os.path.expanduser("/var/www/cgi-bin/virtualenv/bin/activate_this.py")
 # execfile(activate_env, dict(__file__=activate_env))
