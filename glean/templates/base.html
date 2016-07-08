@@ -104,7 +104,8 @@
                         <!--
                         <input type="button" ng-bind="'delete'" ng-click="delete_theme(theme_item)">
                         -->
-                        <div><h6><span ng-bind="theme_item.text"></span></h6></div>
+                        <div><h6><span ng-bind="theme_item.text" ng-if="register_theme_list.is_read"></span></h6></div>
+                        <div><h4><span ng-bind="'まずはテーマについてコメントしてみましょう！'" ng-if="!register_theme_list.is_read && theme_item!=0"></span></h4></div>
                     </div>
                 </nav>
             </div>
