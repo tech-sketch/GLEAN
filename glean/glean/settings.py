@@ -114,7 +114,7 @@ STATIC_URL = '/static/'
 SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-DRAGON_URL = 'http://localhost:9999/'
+DRAGON_URL = 'http://127.0.0.1:9999/'
 
 LOGIN_REDIRECT_URL = '/chat/'
 
