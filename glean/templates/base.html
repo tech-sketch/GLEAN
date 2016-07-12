@@ -101,7 +101,8 @@
             <div class="fixedBar grey lighten-1 teal-text">
                 <nav class="grey lighten-1">
                     <div>
-                        <h5><span ng-bind="theme_item.theme"></span></h5>
+                        <h5><span ng-bind="theme_item.theme" ng-if="register_theme_list.is_read"></span></h5>
+                        <h5><span ng-bind="'未参加のテーマ一覧'" ng-if="theme_id == 0"></span></h5>
                         <!--
                         <input type="button" ng-bind="'delete'" ng-click="delete_theme(theme_item)">
                         -->
