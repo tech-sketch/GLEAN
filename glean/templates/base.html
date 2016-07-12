@@ -74,7 +74,9 @@
                      </a>
                      <ul id='dropdown1' class="dropdown-content grey lighten-1">
                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
+                         <!--
                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit2">編集</a></li>
+                         -->
                      </ul>
                  </h4>
 
@@ -143,32 +145,37 @@
                     <div class="container name">
                         <span class="left-align name" ng-bind="user.username"></span>
                     </div>
-                    <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
                     <div class="card-content left-align chat-content">
                         <p class="chat-content">
-                            <span ng-bind="'まずはあなたの意見を発信してみましょう！'"></span>
+                            <span ng-bind="'コメント欄は下にあります'"></span>
                         </p>
-                        <div>
-                            <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                            <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                        </div>
                     </div>
                 </div>
                 <div class="card hoverable white chat" ng-if="theme_id != 0 && !register_theme_list.is_read">
                     <div class="container name">
                         <span class="left-align name" ng-bind="user.username"></span>
                     </div>
-                    <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
                     <div class="card-content left-align chat-content">
                         <p class="chat-content">
-                            <span ng-bind="'コメント欄は下にあります'"></span>
+                            <span ng-bind="'まずはあなたの意見を発信してみましょう！'"></span>
                         </p>
-                        <div>
-                            <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
-                            <a class="btn right grey"><i class="material-icons left">delete</i></a>
-                        </div>
                     </div>
                 </div>
+
+                <!--テーマ未選択の場合-->
+                <li ng-repeat="item in theme_list" ng-if="theme_id == 0 && !check_register(item)">
+                    <div class="card hoverable white chat">
+                        <div class="card-content left-align chat-content">
+                            <p class="chat-content">
+                                <h5><span ng-bind="item.theme"></span></h5>
+                                <h6><span ng-bind="item.text"></span></h6>
+                            </p>
+                            <div>
+                                <a class="btn blue good"><i class="material-icons left" ng-bind="'参加する'" ng-click="read_theme(item)"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </div>
 
             <!--投稿欄 開始-->
