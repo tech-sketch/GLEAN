@@ -10,6 +10,7 @@
 * swampdragon 0.4.2.2
 * redis 2.8.2(win32の場合ビルドが必要)
 * postgreSQL 9.4
+
 ##Pythonモジュール
 * asgi-redis 0.13.1
 * django 1.8.13
@@ -17,6 +18,7 @@
 * swampdragon 0.4.2.2
 * swampdragon-auth 0.1.3
 - requirements参照
+
 ##手順
 1.redis-server.exeを起動します
 
