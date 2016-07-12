@@ -104,7 +104,9 @@
                         <input type="button" ng-bind="'delete'" ng-click="delete_theme(theme_item)">
                         -->
                         <div><h6><span ng-bind="theme_item.text" ng-if="register_theme_list.is_read"></span></h6></div>
+                        <!--
                         <div><h4><span ng-bind="'まずはテーマについてコメントしてみましょう！'" ng-if="!register_theme_list.is_read && theme_item!=0"></span></h4></div>
+                        -->
                     </div>
                 </nav>
             </div>
@@ -136,6 +138,37 @@
                         </div>
                     </div>
                 </li>
+                <!--テーマ選択済みでコメントがない場合-->
+                <div class="card hoverable white chat" ng-if="theme_id != 0 && !register_theme_list.is_read">
+                    <div class="container name">
+                        <span class="left-align name" ng-bind="user.username"></span>
+                    </div>
+                    <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
+                    <div class="card-content left-align chat-content">
+                        <p class="chat-content">
+                            <span ng-bind="'まずはあなたの意見を発信してみましょう！'"></span>
+                        </p>
+                        <div>
+                            <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                            <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card hoverable white chat" ng-if="theme_id != 0 && !register_theme_list.is_read">
+                    <div class="container name">
+                        <span class="left-align name" ng-bind="user.username"></span>
+                    </div>
+                    <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
+                    <div class="card-content left-align chat-content">
+                        <p class="chat-content">
+                            <span ng-bind="'コメント欄は下にあります'"></span>
+                        </p>
+                        <div>
+                            <a class="btn blue good"><i class="material-icons left">thumb_up</i></a>
+                            <a class="btn right grey"><i class="material-icons left">delete</i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!--投稿欄 開始-->
