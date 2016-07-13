@@ -126,16 +126,14 @@ postgreSQLを実行し、以下のコマンドを順に実行してください
 ※テスト実行時には以下のコマンドを追加で実行する必要があります。
 
 	ALTER USER glean CREATEDB;
-	
+
 ####プロジェクトの初期設定
 1. データベースの作成が終わったら、`ex_password.py.dummy`の`.dummy`部分を削除し、データベース作成時に設定した情報を記入してください
 2. djangoプロジェクトで使用するデータベースをマイグレートします。以下のコマンドを入力してください。
 
-
 	python manage.py makemigrations chat
 	python manage.py migrate
 	python manage.py createsupertuser
-
 
 以上で初期設定は終了です
 
