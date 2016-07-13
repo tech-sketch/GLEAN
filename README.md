@@ -114,7 +114,7 @@ python manage.py createsuperuserで作成したアカウントでログインすることができます
 
 ####データベースの作成
 postgreSQLを実行し、以下のコマンドを順に実行してください
-	
+
 	psql postgres postgres
 	CREATE USER glean;
 	alter role glean with password'password';
@@ -131,6 +131,7 @@ postgreSQLを実行し、以下のコマンドを順に実行してください
 ####プロジェクトの初期設定
 1. データベースの作成が終わったら、ex_password.py.dummyの".dummy"部分を削除し、データベース作成時に設定した情報を記入してください
 2. djangoプロジェクトで使用するデータベースをマイグレートします。以下のコマンドを入力してください。
+
 	python manage.py makemigrations chat
 	python manage.py migrate
 	python manage.py createsupertuser
