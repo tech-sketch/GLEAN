@@ -101,12 +101,12 @@
             <div class="fixedBar grey lighten-1 teal-text">
                 <nav class="grey lighten-1">
                     <div>
-                        <h5><span ng-bind="theme_item.theme" ng-if="register_theme_list.is_read"></span></h5>
+                        <h5><span ng-bind="theme_item.theme" ng-if="theme_id != 0"></span></h5>
                         <h5><span ng-bind="'未参加のテーマ一覧'" ng-if="theme_id == 0"></span></h5>
                         <!--
                         <input type="button" ng-bind="'delete'" ng-click="delete_theme(theme_item)">
                         -->
-                        <div><h6><span ng-bind="theme_item.text" ng-if="register_theme_list.is_read"></span></h6></div>
+                        <div><h6><span ng-bind="theme_item.text" ng-if="theme_id != 0"></span></h6></div>
                         <!--
                         <div><h4><span ng-bind="'まずはテーマについてコメントしてみましょう！'" ng-if="!register_theme_list.is_read && theme_item!=0"></span></h4></div>
                         -->
@@ -122,7 +122,7 @@
 
             <!--チャット画面）開始ー-->
             <div class="col s9 grey lighten-3 ">
-                <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && register_theme_list.is_read">
+                <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && is_read(register_theme_list, theme_item)">
                     <div class="card hoverable white chat">
                         <div class="container name">
                             <span class="left-align name" ng-bind="get_username(item)"></span>
@@ -142,7 +142,7 @@
                     </div>
                 </li>
                 <!--テーマ選択済みでコメントがない場合-->
-                <div class="card hoverable white chat" ng-if="theme_id != 0 && !register_theme_list.is_read">
+                <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
                     <div class="container name">
                         <span class="left-align name" ng-bind="user.username"></span>
                     </div>
@@ -152,7 +152,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card hoverable white chat" ng-if="theme_id != 0 && !register_theme_list.is_read">
+                <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
                     <div class="container name">
                         <span class="left-align name" ng-bind="user.username"></span>
                     </div>

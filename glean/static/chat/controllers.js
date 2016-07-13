@@ -194,4 +194,19 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.update_comment_good = function(item) {
         $dragon.update('route-comment', {comment:item.id});
     }
+
+    $scope.is_read = function(register_theme_list, item) {
+        if(!item.is_enforce){
+            return true;
+        }
+        else if(register_theme_list.is_read){
+            return true;
+        }
+        else if (!register_theme_list.is_read && item.is_enforce){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }]);
