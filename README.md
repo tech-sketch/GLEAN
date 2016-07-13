@@ -41,7 +41,11 @@ x.xにログイン画面を示します。
 
 python manage.py createsuperuserで作成したアカウントでログインすることができます。
 
+![top_login](https://github.com/tech-sketch/GLEAN/readme/top_login.png "top_login")
+
 あなたが新しくアクセスしたユーザーであるならば、新規登録ボタンから現れるダイアログ(x.x)に必要事項を入力することで、すぐにこのアプリケーションを使うことができます。
+
+![top_dialog](https://github.com/tech-sketch/GLEAN/readme/top_dialog.png "top_dialog")
 
 
 ###チャット画面
@@ -56,12 +60,15 @@ python manage.py createsuperuserで作成したアカウントでログインすることができます
 
 興味深いテーマがあったら「参加する」ボタンをクリックしてみましょう。
 
-すでに発言したことのあるテーマの名前をクリックするとチャット画面に映ります。
+![chat_top](https://github.com/tech-sketch/GLEAN/readme/chat_top.png "chat_top")
+
+サイドバーにある、すでに発言したことのあるテーマの名前をクリックするとチャット画面に映ります。
 
 画面の一番上には、テーマとその説明が、中央にはそのテーマに対する発言の記録が、下にはコメント投稿欄が表示されています。
 
 では、投稿欄にコメントを入力し、欄右側のボタンをクリックして投稿してみましょう。
 
+![chat_joined](https://github.com/tech-sketch/GLEAN/readme/chat_joined.png "chat_joined")
 
 未参加のテーマに参加する場合、そこに投稿されたコメントをすぐに見ることはできません。
 
@@ -71,18 +78,9 @@ python manage.py createsuperuserで作成したアカウントでログインすることができます
 
 自分の意見と他人の意見とを比べ、なぜその人がそのように考えているのか聞いてみるのもいいでしょう。
 
-##操作方法
+きっと、あなたの興味をひく意見があるはずです。
 
-###ログインしてみましょう
-
-
-
-###発言してみましょう
-
-
-
-###新しいテーマに興味を持ったら
-
+![chat_nojoin](https://github.com/tech-sketch/GLEAN/readme/chat_nojoin.png "chat_nojoin")
 
 #実行環境
 
@@ -106,9 +104,9 @@ python manage.py createsuperuserで作成したアカウントでログインすることができます
 
 ###モジュールのインストール
 
-* pip install -r requirements.txtを実行し、必要なモジュールをインストールしてください
+* `pip install -r requirements.txt`を実行し、必要なモジュールをインストールしてください
 * psycopg2はインストーラをダウンロードし、pip installの対象として指定し、導入してください
-* redisサーバーはwindows32bit環境だとビルドして導入する必要があります
+* redisサーバーはwindows32bit環境ではビルドして導入する必要があります
 
 ###初期設定
 
@@ -123,18 +121,21 @@ postgreSQLを実行し、以下のコマンドを順に実行してください
 
 ※データベース名、ユーザー名は本アプリケーションの初期設定です
 
-※変更する場合は、プロジェクト中のsettings.pyのdatabase設定を適宜変更してください
+※変更する場合は、プロジェクト中の`settings.py`のdatabase設定を適宜変更してください
 
 ※テスト実行時には以下のコマンドを追加で実行する必要があります。
 
 	ALTER USER glean CREATEDB;
+	
 ####プロジェクトの初期設定
-1. データベースの作成が終わったら、ex_password.py.dummyの".dummy"部分を削除し、データベース作成時に設定した情報を記入してください
+1. データベースの作成が終わったら、`ex_password.py.dummy`の`.dummy`部分を削除し、データベース作成時に設定した情報を記入してください
 2. djangoプロジェクトで使用するデータベースをマイグレートします。以下のコマンドを入力してください。
+
 
 	python manage.py makemigrations chat
 	python manage.py migrate
 	python manage.py createsupertuser
+
 
 以上で初期設定は終了です
 
@@ -147,16 +148,12 @@ postgreSQLを実行し、以下のコマンドを順に実行してください
 
 4. python server.py
 
-5. http://127.0.0.1:8000/loginにアクセスしてみましょう
+5. http://127.0.0.1:8000/login にアクセスしてみましょう
 
 #ライセンス
 
 #バージョン情報
+
 2016/07/12 v1.0 Release
-
-#test
-    space
-
-	tab
 
 
