@@ -219,12 +219,14 @@
     <div id="modal2" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>新規登録</h4>
-            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text">
-            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text">
+            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text"/>
+            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text"/>
+            <p><input type="checkbox" id="check" value="" ng-model="flag" ng-true-value="1" ng-false-value="0"/>
+            <label for="check">発言を求める</label></p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment, flag)">登録</a>
         </div>
     </div>
     <div id="modal-edit1" class="modal modal-fixed-footer">
