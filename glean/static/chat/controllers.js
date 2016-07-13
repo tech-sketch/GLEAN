@@ -209,4 +209,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
             return true;
         }
     }
+    $scope.set_theme = function(id) {
+        $scope.theme_id = id;
+    }
 }]);
