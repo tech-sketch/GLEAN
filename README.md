@@ -112,15 +112,14 @@ python manage.py createsuperuserで作成したアカウントでログインすることができます
 
 ###初期設定
 
-* postgreSQLを実行し、以下のコマンドを順に実行してください
+####データベースの作成
+postgreSQLを実行し、以下のコマンドを順に実行してください
+	
+	psql postgres postgres
+	CREATE USER glean;
+	alter role glean with password'password';
+	CREATE DATABASE gleandb OWNER glean;
 
-psql postgres postgres：管理ユーザーとしてログイン
-
-CREATE USER glean;
-
-alter role glean with password'password';
-
-CREATE DATABASE gleandb OWNER glean;
 
 ※データベース名、ユーザー名は本アプリケーションの初期設定です
 
@@ -128,41 +127,36 @@ CREATE DATABASE gleandb OWNER glean;
 
 ※テスト実行時には以下のコマンドを追加で実行する必要があります。
 
-ALTER USER glean CREATEDB;
-
-* データベースの作成が終わったら、ex_password.py.dummyの".dummy"部分を削除し、データベース作成時に設定した情報を記入してください
+	ALTER USER glean CREATEDB;
+####プロジェクトの初期設定
+1. データベースの作成が終わったら、ex_password.py.dummyの".dummy"部分を削除し、データベース作成時に設定した情報を記入してください
+2. djangoプロジェクトで使用するデータベースをマイグレートします。以下のコマンドを入力してください。
+    
+    python manage.py makemigrations chat
+    python manage.py migrate
+    python manage.py createsupertuser
 
 以上で初期設定は終了です
 
 ##開発用サーバを立ち上げる
-1.redis-server.exeを起動します
+1. redis-server.exeを起動します
 
-2.コマンドプロンプトを二つ立ち上げます
+2. コマンドプロンプトを二つ立ち上げます
 
-3.python manage.py runserver
+3. python manage.py runserver
 
-4.python server.py
+4. python server.py
 
-※python manage.py makemigrations ○○,
-python manage.py migrate,
-python manage.py createsupertuser
-は適宜行ってください
-
-#今後の展望
-
-##インターフェイス
-
-
-
-##機能
-
-* テーマ編集機能の実装
-* コメント削除時にアラートを表示する
-* 発言を強制するテーマと発言を強制しないテーマの区別(データベースには反映済み)
-* コメントの投稿を求めるダイアログの表示
-* 個人ごとのアイコン画像設定機能の実装
-* 管理者権限の設定
+5. http://127.0.0.1:8000/loginにアクセスしてみましょう
 
 #ライセンス
+
+#バージョン情報
+2016/07/12 v1.0 Release
+
+#test
+    space
+
+	tab
 
 
