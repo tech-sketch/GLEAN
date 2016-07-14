@@ -118,9 +118,9 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
         // console.log($scope.roomId);
     }
     // テーマ情報の新規作成
-    $scope.create_theme = function(theme, comment, flag) {
+    $scope.create_theme = function(theme, comment) {
         // console.log($scope.user);
-        $dragon.create('route-theme', {theme:theme.text, text:comment.text, auth:$scope.user.id, is_enforce:flag});
+        $dragon.create('route-theme', {theme:theme.text, text:comment.text, auth:$scope.user.id, is_enforce:true});
         theme.text = "";
         comment.text = "";
     }

@@ -82,7 +82,7 @@
                  </h4>
 
                  <ul>
-                     <li ng-repeat="item in theme_list" ng-if="!check_register(item) && item.is_enforce">
+                     <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
 
                         <h5><span class="button card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
                         <!--
@@ -95,6 +95,7 @@
                      </li>
 
                  </ul>
+                <!--
                 <h4>
                      閲覧可能
                      <a class="dropdown-button bun right white-text" href="#" data-activates="dropdown1">
@@ -103,9 +104,7 @@
                      <ul id='dropdown1' class="dropdown-content grey lighten-1">
                          <li><a class="waves-effect waves-light black-text" href="#" ng-click="set_theme(0)">一覧</a></li>
                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal3">新規登録</a></li>
-                         <!--
-                         <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit2">編集</a></li>
-                         -->
+
                      </ul>
                  </h4>
 
@@ -113,16 +112,11 @@
                      <li ng-repeat="item in theme_list" ng-if="!check_register(item) && !item.is_enforce">
 
                         <h5><span class="button card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
-                        <!--
-                        <h5><li>
-                            <a class="modal-trigger card s3 grey darken-2 white-text" href="#modal-comment1" ng-bind="item.theme">
 
-                            </a>
-                        </li></h5>
-                        -->
                      </li>
 
                  </ul>
+                -->
             </div>
             <!--サイドバ 終了ー-->
 
@@ -201,8 +195,10 @@
                                 <h6><span ng-bind="item.text"></span></h6>
                             </p>
                             <div>
+                                <!--
                                 <h5><span ng-bind="'まずは発言してみましょう'" ng-if="item.is_enforce"></span></h5>
                                 <h5><span ng-bind="'だれでも閲覧できます'" ng-if="!item.is_enforce"></span></h5>
+                                -->
                                 <a class="btn blue good"><i class="material-icons left" ng-bind="'参加する'" ng-click="read_theme(item)"></i></a>
                             </div>
                         </div>
@@ -252,12 +248,14 @@
             <h4>新規登録</h4>
             <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text"/>
             <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text"/>
+            <!--
             <p><input type="checkbox" id="check" value="" ng-model="flag" ng-true-value="1" ng-false-value="0"/>
             <label for="check">発言を求める</label></p>
+            -->
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment, flag)">登録</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
         </div>
     </div>
     <div id="modal3" class="modal modal-fixed-footer">
