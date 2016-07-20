@@ -45,7 +45,7 @@ python manage.py createsuperuserで作成したアカウントでログインす
 
 あなたが新しくアクセスしたユーザーであるならば、新規登録ボタンから現れるダイアログ(x.x)に必要事項を入力することで、すぐにこのアプリケーションを使うことができます。
 
-![top_dialog](https://github.com/tech-sketch/GLEAN/readme/top_dialog.png "top_dialog")
+![top_dialog](https://github.com/tech-sketch/GLEAN/blob/images/02_add.PNG "top_dialog")
 
 
 ###チャット画面
@@ -60,7 +60,7 @@ python manage.py createsuperuserで作成したアカウントでログインす
 
 興味深いテーマがあったら「参加する」ボタンをクリックしてみましょう。
 
-![chat_top](https://github.com/tech-sketch/GLEAN/readme/chat_top.png "chat_top")
+![chat_top](https://github.com/tech-sketch/GLEAN/blob/images/04_top.PNG "chat_top")
 
 サイドバーにある、すでに発言したことのあるテーマの名前をクリックするとチャット画面に映ります。
 
@@ -68,7 +68,7 @@ python manage.py createsuperuserで作成したアカウントでログインす
 
 では、投稿欄にコメントを入力し、欄右側のボタンをクリックして投稿してみましょう。
 
-![chat_joined](https://github.com/tech-sketch/GLEAN/readme/chat_joined.png "chat_joined")
+![chat_joined](https://github.com/tech-sketch/GLEAN/blob/images/07_joined_ok.PNG "chat_joined")
 
 未参加のテーマに参加する場合、そこに投稿されたコメントをすぐに見ることはできません。
 
@@ -80,7 +80,7 @@ python manage.py createsuperuserで作成したアカウントでログインす
 
 きっと、あなたの興味をひく意見があるはずです。
 
-![chat_nojoin](https://github.com/tech-sketch/GLEAN/readme/chat_nojoin.png "chat_nojoin")
+![chat_nojoin](https://github.com/tech-sketch/GLEAN/blob/images/06_join_add_comment.PNG "chat_nojoin")
 
 #実行環境
 
