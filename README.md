@@ -41,7 +41,7 @@ x.xにログイン画面を示します。
 
 python manage.py createsuperuserで作成したアカウントでログインすることができます。
 
-![top_login](https://github.com/tech-sketch/GLEAN/tree/images/01_top_login.PNG "top_login")
+![top_login](https://github.com/tech-sketch/GLEAN/blob/images/01_login_top.PNG "top_login")
 
 あなたが新しくアクセスしたユーザーであるならば、新規登録ボタンから現れるダイアログ(x.x)に必要事項を入力することで、すぐにこのアプリケーションを使うことができます。
 
