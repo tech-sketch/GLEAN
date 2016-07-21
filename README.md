@@ -1,117 +1,117 @@
-#GLEAN�Ƃ�
+#GLEANとは
 
-##�ړI
+##目的
 
-GLEAN�͎�y�ȃf�B�X�J�b�V�����X�y�[�X��񋟂��܂��B
+GLEANは手軽なディスカッションスペースを提供します。
 
-�M���b�v�B����͂ǂ��ɂł�����܂��B
+ギャップ。それはどこにでもあります。
 
-�������A�ǂ��ɂł����邩�炱���A���ł���Q�Ƃ��ė����͂�����܂��B
+しかし、どこにでもあるからこそ、いつでも障害として立ちはだかります。
 
-���̃A�v���P�[�V�����̖ړI�́A**��y�ȃf�B�X�J�b�V�����X�y�[�X�̒�**�ł��B
+このアプリケーションの目的は、**手軽なディスカッションスペースの提供**です。
 
-�Ⴆ�΁A�u�c�Ƃ̗ǂ��Ƃ���v�Ƃ����悤�ȁA���R�Ƃ����A
-�������P���ȃe�[�}�ɑ΂���R�����g��ʂ��A�X�l�̉��l�ρE�l���𔭐M���A���ݗ����𑣂��܂��B
+例えば、「営業の良いところ」というような、漠然とした、
+しかし単純なテーマに対するコメントを通し、個々人の価値観・考えを発信し、相互理解を促します。
 
-���Ȃ��́u�f�B�X�J�b�V�����v�Ƃ������t�����Ƃ炦�����Ă͂��܂��񂩁H
+あなたは「ディスカッション」という言葉を難しくとらえすぎてはいませんか？
 
-�f�B�X�J�b�V�����ɂ����āA���m�Ȍ��_���o���K�v�͂���܂���B
+ディスカッションにおいて、明確な結論を出す必要はありません。
 
-�ɘ_�A���Ȃ��̒��Łu�����v��������΂���ł����̂ł��B
+極論、あなたの中で「答え」が見つかればそれでいいのです。
 
-���̃A�v���P�[�V�����́A�R�~���j�P�[�V�����̉����Ƃ��ăf�B�X�J�b�V�����𑣂��A
-���Ȃ��̓�����������菕�������܂��B
+このアプリケーションは、コミュニケーションの延長としてディスカッションを促し、
+あなたの答えを見つける手助けをします。
 
-##�Ώۃ��[�U�[
+##対象ユーザー
 
-�u�M���b�v�v�������ׂĂ̐l�E�ꏊ
+「ギャップ」を持つすべての人・場所
 
-#�g����
+#使い方
 
-���̃A�v���P�[�V�����̎g�����͊ȒP�ł��B
+このアプリケーションの使い方は簡単です。
 
-�܂��̓y�[�W�ɃA�N�Z�X���Ă݂܂��傤�B
+まずはページにアクセスしてみましょう。
 
-##��ʂ̌���
+##画面の見方
 
-###���O�C�����
-x.x�Ƀ��O�C����ʂ������܂��B
+###ログイン画面
+x.xにログイン画面を示します。
 
-��ʍ�����"���[�U�[��"�A"�p�X���[�h"�ɏ�����͂��A�G���^�[�L�[���������A���O�C���{�^�����N���b�N���Ă��������B
+画面左下の"ユーザー名"、"パスワード"に情報を入力し、エンターキーを押すか、ログインボタンをクリックしてください。
 
-python manage.py createsuperuser�ō쐬�����A�J�E���g�Ń��O�C�����邱�Ƃ��ł��܂��B
+python manage.py createsuperuserで作成したアカウントでログインすることができます。
 
-![top_login](https://github.com/tech-sketch/GLEAN/readme/top_login.png "top_login")
+![top_login](https://github.com/tech-sketch/GLEAN/blob/images/01_login_top.PNG "top_login")
 
-���Ȃ����V�����A�N�Z�X�������[�U�[�ł���Ȃ�΁A�V�K�o�^�{�^�����猻���_�C�A���O(x.x)�ɕK�v��������͂��邱�ƂŁA�����ɂ��̃A�v���P�[�V�������g�����Ƃ��ł��܂��B
+あなたが新しくアクセスしたユーザーであるならば、新規登録ボタンから現れるダイアログ(x.x)に必要事項を入力することで、すぐにこのアプリケーションを使うことができます。
 
-![top_dialog](https://github.com/tech-sketch/GLEAN/readme/top_dialog.png "top_dialog")
+![top_dialog](https://github.com/tech-sketch/GLEAN/blob/images/02_add.PNG "top_dialog")
 
 
-###�`���b�g���
+###チャット画面
 
-���O�C�����Ă�������̉�ʂ�x.x�Ɏ����܂��B
+ログインしてきた直後の画面をx.xに示します。
 
-��ʍ��[�̃T�C�h�o�[�͉�ʂɊ֌W�Ȃ��\������܂��B
+画面左端のサイドバーは画面に関係なく表示されます。
 
-�T�C�h�o�[�ɂ͂��łɎQ�����A�����������Ƃ̂���e�[�}�ƁA�܂������������Ƃ̂Ȃ��e�[�}���\������Ă��܂��B
+サイドバーにはすでに参加し、発言したことのあるテーマと、まだ発言したことのないテーマが表示されています。
 
-�܂��A��ʒ����ɂ͖{���ł���΃`���b�g��ʂ��\������܂����A���O�C�����Ă�������́A���Q���̃e�[�}�̈ꗗ���\������Ă��܂��B
+また、画面中央には本来であればチャット画面が表示されますが、ログインしてきた直後は、未参加のテーマの一覧が表示されています。
 
-�����[���e�[�}����������u�Q������v�{�^�����N���b�N���Ă݂܂��傤�B
+興味深いテーマがあったら「参加する」ボタンをクリックしてみましょう。
 
-![chat_top](https://github.com/tech-sketch/GLEAN/readme/chat_top.png "chat_top")
+![chat_top](https://github.com/tech-sketch/GLEAN/blob/images/04_top.PNG "chat_top")
 
-�T�C�h�o�[�ɂ���A���łɔ����������Ƃ̂���e�[�}�̖��O���N���b�N����ƃ`���b�g��ʂɉf��܂��B
+サイドバーにある、すでに発言したことのあるテーマの名前をクリックするとチャット画面に映ります。
 
-��ʂ̈�ԏ�ɂ́A�e�[�}�Ƃ��̐������A�����ɂ͂��̃e�[�}�ɑ΂��锭���̋L�^���A���ɂ̓R�����g���e�����\������Ă��܂��B
+画面の一番上には、テーマとその説明が、中央にはそのテーマに対する発言の記録が、下にはコメント投稿欄が表示されています。
 
-�ł́A���e���ɃR�����g����͂��A���E���̃{�^�����N���b�N���ē��e���Ă݂܂��傤�B
+では、投稿欄にコメントを入力し、欄右側のボタンをクリックして投稿してみましょう。
 
-![chat_joined](https://github.com/tech-sketch/GLEAN/readme/chat_joined.png "chat_joined")
+![chat_joined](https://github.com/tech-sketch/GLEAN/blob/images/07_joined_ok.PNG "chat_joined")
 
-���Q���̃e�[�}�ɎQ������ꍇ�A�����ɓ��e���ꂽ�R�����g�������Ɍ��邱�Ƃ͂ł��܂���B
+未参加のテーマに参加する場合、そこに投稿されたコメントをすぐに見ることはできません。
 
-�܂��́A�e�[�}�ɑ΂��鎩���̈ӌ��𓊍e���Ă݂܂��傤�B
+まずは、テーマに対する自分の意見を投稿してみましょう。
 
-��������ƁA�ق��̐l�����̈ӌ������邱�Ƃ��ł���悤�ɂȂ�܂��B
+そうすると、ほかの人たちの意見を見ることができるようになります。
 
-�����̈ӌ��Ƒ��l�̈ӌ��Ƃ��ׁA�Ȃ����̐l�����̂悤�ɍl���Ă���̂������Ă݂�̂������ł��傤�B
+自分の意見と他人の意見とを比べ、なぜその人がそのように考えているのか聞いてみるのもいいでしょう。
 
-�����ƁA���Ȃ��̋������Ђ��ӌ�������͂��ł��B
+きっと、あなたの興味をひく意見があるはずです。
 
-![chat_nojoin](https://github.com/tech-sketch/GLEAN/readme/chat_nojoin.png "chat_nojoin")
+![chat_nojoin](https://github.com/tech-sketch/GLEAN/blob/images/06_join_add_comment.PNG "chat_nojoin")
 
-#���s��
+#実行環境
 
 * Windows 7 32bit
 * django 1.8.3
 * swampdragon 0.4.2.2
-* redis 2.8�ȍ~(win32�̏ꍇ�r���h���K�v)
+* redis 2.8以降(win32の場合ビルドが必要)
 * postgreSQL 9.6
 
-##Python���W���[��(requirements.txt���Q��)
+##Pythonモジュール(requirements.txtも参照)
 
 * asgi-redis 0.13.1
 * django 1.8.13
-* psycopg2 2.6.1(�v�C���X�g�[��)
+* psycopg2 2.6.1(要インストーラ)
 * swampdragon 0.4.2.2
 * swampdragon-auth 0.1.3
 
-#�J�����邽�߂̎菇
+#開発するための手順
 
-##�J�����𐮂���
+##開発環境を整える
 
-###���W���[���̃C���X�g�[��
+###モジュールのインストール
 
-* `pip install -r requirements.txt`�����s���A�K�v�ȃ��W���[�����C���X�g�[�����Ă�������
-* psycopg2�̓C���X�g�[�����_�E�����[�h���Apip install�̑ΏۂƂ��Ďw�肵�A�������Ă�������
-* redis�T�[�o�[��windows32bit���ł̓r���h���ē�������K�v������܂�
+* `pip install -r requirements.txt`を実行し、必要なモジュールをインストールしてください
+* psycopg2はインストーラをダウンロードし、pip installの対象として指定し、導入してください
+* redisサーバーはwindows32bit環境ではビルドして導入する必要があります
 
-###�����ݒ�
+###初期設定
 
-####�f�[�^�x�[�X�̍쐬
-postgreSQL�����s���A�ȉ��̃R�}���h�����Ɏ��s���Ă�������
+####データベースの作成
+postgreSQLを実行し、以下のコマンドを順に実行してください
 
 	psql postgres postgres
 	CREATE USER glean;
@@ -119,40 +119,38 @@ postgreSQL�����s���A�ȉ��̃R�}���h�����Ɏ��s���Ă�������
 	CREATE DATABASE gleandb OWNER glean;
 
 
-���f�[�^�x�[�X���A���[�U�[���͖{�A�v���P�[�V�����̏����ݒ�ł�
+※データベース名、ユーザー名は本アプリケーションの初期設定です
 
-���ύX����ꍇ�́A�v���W�F�N�g����`settings.py`��database�ݒ��K�X�ύX���Ă�������
+※変更する場合は、プロジェクト中の`settings.py`のdatabase設定を適宜変更してください
 
-���e�X�g���s���ɂ͈ȉ��̃R�}���h��ǉ��Ŏ��s����K�v������܂��B
+※テスト実行時には以下のコマンドを追加で実行する必要があります。
 
 	ALTER USER glean CREATEDB;
 
-####�v���W�F�N�g�̏����ݒ�
-1. �f�[�^�x�[�X�̍쐬���I�������A`ex_password.py.dummy`��`.dummy`�������폜���A�f�[�^�x�[�X�쐬���ɐݒ肵�������L�����Ă�������
-2. django�v���W�F�N�g�Ŏg�p����f�[�^�x�[�X���}�C�O���[�g���܂��B�ȉ��̃R�}���h����͂��Ă��������B
+####プロジェクトの初期設定
+1. データベースの作成が終わったら、`ex_password.py.dummy`の`.dummy`部分を削除し、データベース作成時に設定した情報を記入してください
+2. djangoプロジェクトで使用するデータベースをマイグレートします。以下のコマンドを入力してください。
+~~~
+python manage.py makemigrations chat
+python manage.py migrate
+python manage.py createsupertuser
+~~~
+以上で初期設定は終了です
 
-	
-	python manage.py makemigrations chat
-	python manage.py migrate
-	python manage.py createsupertuser
+##開発用サーバを立ち上げる
+1. redis-server.exeを起動します
 
-
-�ȏ�ŏ����ݒ�͏I���ł�
-
-##�J���p�T�[�o�𗧂��グ��
-1. redis-server.exe���N�����܂�
-
-2. �R�}���h�v�����v�g�������グ�܂�
+2. コマンドプロンプトを二つ立ち上げます
 
 3. python manage.py runserver
 
 4. python server.py
 
-5. http://127.0.0.1:8000/login �ɃA�N�Z�X���Ă݂܂��傤
+5. http://127.0.0.1:8000/login にアクセスしてみましょう
 
-#���C�Z���X
+#ライセンス
 
-#�o�[�W�������
+#バージョン情報
 
 2016/07/12 v1.0 Release
 
