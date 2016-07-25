@@ -119,8 +119,6 @@ DRAGON_URL = 'http://127.0.0.1:9999/'
 # please write your public ip and open port num(but "9999")
 #DRAGON_URL = 'http://:/'
 
-LOGIN_REDIRECT_URL = '/chat/'
-
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
 LOGIN_REDIRECT_URL = '/base'

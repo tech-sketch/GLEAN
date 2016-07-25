@@ -18,7 +18,6 @@ from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    url(r'^chat', login_required(TemplateView.as_view(template_name='index.html')), name='home'),
     url(r'^base', login_required(TemplateView.as_view(template_name='base.html')), name='base'),
     url(r'^top', login_required(TemplateView.as_view(template_name='toppage.html')), name='top'),
     url(r'^login', 'django.contrib.auth.views.login', kwargs={'template_name': 'login.html'}, name='login'),
