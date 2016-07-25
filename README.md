@@ -126,6 +126,34 @@ postgreSQLを実行し、以下のコマンドを順に実行してください
 ※テスト実行時には以下のコマンドを追加で実行する必要があります。
 
 	ALTER USER glean CREATEDB;
+	
+####settings.pyの設定
+1. 先ほど作成したデータベースの情報をプロジェクトに設定します
+
+　初期設定は、以下の通りです
+　
+　これは、postgreSQLを使用する場合、かつ、データベース作成の際に例と同様に名称を設定した場合のものになります
+　
+~~~
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'gleandb',
+        'USER': 'glean',
+        'PASSWORD': glean.ex_password.db_password,
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+~~~
+
+2. swampdragonがクライアントに通知するサーバーのアドレス設定を行います
+
+　これは、クライアントがウェブソケット接続をするためにアクセスするURLを決めるもので、ローカルで使用する場合には、
+　`DRAGON_URL = 'http://127.0.0.1:9999/'`のように設定してください
+　
+　
+　※`localhost:9999`では接続できない場合があります
 
 ####プロジェクトの初期設定
 1. データベースの作成が終わったら、`ex_password.py.dummy`の`.dummy`部分を削除し、データベース作成時に設定した情報を記入してください
