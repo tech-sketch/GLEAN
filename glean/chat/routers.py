@@ -6,22 +6,37 @@ from .models import Comment, Theme, ThemeRegister
 from django.contrib.auth.models import User
 from .serializers import CommentSerializer, ThemeSerializer, UserSerializer, ThemeRegisterSerializer
 
+import traceback
+
+def exception(func):
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except:
+            #raiseしない
+            print("--------------------------------------------")
+            print(traceback.print_exc())
+            print("--------------------------------------------")
+    return wrapper
 
 class UserRouter(ModelRouter):
     route_name = 'route-user'
     serializer_class = UserSerializer
     model = 'auth.User'
 
+    @exception
     def get_object(self, **kwargs):
         if kwargs['user'] == "":
             return self.connection.user
         else:
             return self.model.objects.filter(pk=kwargs['user'])
 
+    @exception
     def get_query_set(self, **kwargs):
         # print(User.objects.all())
         return User.objects.all()
 
+    @exception
     def create(self, **kwargs):
         # print(kwargs['username'])
         user = User(username=kwargs['username'])
@@ -35,12 +50,15 @@ class ThemeRouter(ModelRouter):
     serializer_class = ThemeSerializer
     model = Theme
 
+    @exception
     def get_object(self, **kwargs):
         return self.model.objects.get(pk=kwargs['id'])
 
+    @exception
     def get_query_set(self, **kwargs):
         return self.model.objects.all()
 
+    @exception
     def create(self, **kwargs):
         if kwargs['is_enforce'] == 1:
             theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']),
@@ -50,6 +68,7 @@ class ThemeRouter(ModelRouter):
                           is_enforce=False)
         theme.save()
 
+    @exception
     def delete(self, **kwargs):
         theme = get_object_or_404(Theme, pk=kwargs['theme'])
         # print(theme)
@@ -59,6 +78,7 @@ class ThemeRouter(ModelRouter):
 
         theme.delete()
 
+    @exception
     def update(self, **kwargs):
         theme = get_object_or_404(Theme, pk=kwargs['id'])
         theme.theme = kwargs['theme']
@@ -76,12 +96,15 @@ class CommentRouter(ModelRouter):
     serializer_class = CommentSerializer
     model = Comment
 
+    @exception
     def get_object(self, **kwargs):
         return self.model.objects.get(pk=kwargs['id'])
 
+    @exception
     def get_query_set(self, **kwargs):
         return self.model.objects.filter(theme=kwargs['theme']).order_by('createdate')
 
+    @exception
     def create(self, **kwargs):
         # コメントフラグの管理
         if kwargs["comment"] != "":
@@ -108,6 +131,7 @@ class CommentRouter(ModelRouter):
         #theme.updatedate = datetime.now
         #theme.save()
 
+    @exception
     def update(self, **kwargs):
         comment = get_object_or_404(Comment, pk=kwargs['comment'])
         comment.good = comment.good + 1
@@ -119,11 +143,13 @@ class ThemeRegisterRouter(ModelRouter):
     serializer_class = ThemeRegisterSerializer
     model = ThemeRegister
 
+    @exception
     def get_object(self, **kwargs):
         obj, created = self.model.objects.get_or_create(user=self.connection.user, theme=get_object_or_404(Theme, pk=kwargs['theme']))
         # print(obj.is_read, created)
         return obj
 
+    @exception
     def get_query_set(self, **kwargs):
         if kwargs['theme'] == "":
             obj = self.model.objects.filter(user=self.connection.user)
