@@ -85,8 +85,7 @@ python manage.py createsuperuserで作成したアカウントでログインす
 #実行環境
 
 * Windows 7 32bit
-* django 1.8.3
-* swampdragon 0.4.2.2
+* python 3.5.*
 * redis 2.8以降(win32の場合ビルドが必要)
 * postgreSQL 9.6
 
