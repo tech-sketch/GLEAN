@@ -123,7 +123,7 @@
             <!--テーマ（タイトル）開始ー-->
             <div class="fixedBar grey lighten-1 teal-text">
                 <nav class="grey lighten-1">
-                    <div>
+                    <div class="theme_title">
                         <h5><span ng-bind="theme_item.theme" ng-if="theme_id != 0"></span></h5>
                         <h5><span ng-bind="'未参加のテーマ一覧'" ng-if="theme_id == 0"></span></h5>
                         <!--
@@ -144,7 +144,7 @@
             <!--テーマ（タイトル）終了ー-->
 
             <!--チャット画面）開始ー-->
-            <div class="col s9 grey lighten-3 ">
+            <div class="col s9 grey lighten-3 chat-display-content">
                 <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && is_read(register_theme_list, theme_item)">
                     <div class="card hoverable white chat">
                         <div class="container name">
