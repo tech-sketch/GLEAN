@@ -40,8 +40,11 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
         $dragon.subscribe('route-register', $scope.register_channel, {}).then(function(response) {
             $scope.dataMapper_register = new DataMapper(response.data);
         });
-        $dragon.getList('route-theme', {}).then(function(response) {
+        $dragon.getList('route-theme', {order:"id"}).then(function(response) {
             $scope.theme_list = response.data;
+        });
+        $dragon.getList('route-theme', {order:"good"}).then(function(response) {
+            $scope.theme_list_order = response.data;
         });
         $dragon.getSingle('route-user', {user:""}).then(function(response) {
             $scope.user = response.data;

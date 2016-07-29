@@ -81,7 +81,7 @@
                     <div class="theme_title">
                         <h5>
                             <span ng-bind="theme_item.theme" ng-if="theme_id != 0"></span>
-                            <span ng-bind="'未参加のテーマ一覧'" ng-if="theme_id == 0"></span>
+                            <span ng-bind="'ランキング'" ng-if="theme_id == 0"></span>
                             <!--
                             <h6>
                                 <a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a>
@@ -143,7 +143,7 @@
                 </div>
 
                 <!--テーマ未選択の場合-->
-                <li ng-repeat="item in theme_list" ng-if="theme_id == 0 && !check_register(item)">
+                <li ng-repeat="item in theme_list_order" ng-if="theme_id == 0">
                     <div class="card hoverable white chat">
                         <div class="card-content left-align chat-content">
                             <p class="chat-content">

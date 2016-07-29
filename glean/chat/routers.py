@@ -56,7 +56,7 @@ class ThemeRouter(ModelRouter):
 
     @exception
     def get_query_set(self, **kwargs):
-        return self.model.objects.all()
+        return self.model.objects.order_by(kwargs["order"])
 
     @exception
     def create(self, **kwargs):
