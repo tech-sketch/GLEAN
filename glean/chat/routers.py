@@ -2,9 +2,9 @@ from datetime import datetime
 from swampdragon import route_handler
 from swampdragon.route_handler import ModelRouter
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Comment, Theme, ThemeRegister
+from .models import Comment, Theme, ThemeRegister, Bot
 from django.contrib.auth.models import User
-from .serializers import CommentSerializer, ThemeSerializer, UserSerializer, ThemeRegisterSerializer
+from .serializers import CommentSerializer, ThemeSerializer, UserSerializer, ThemeRegisterSerializer, BotSerializer
 
 import traceback
 
@@ -106,22 +106,61 @@ class CommentRouter(ModelRouter):
 
     @exception
     def create(self, **kwargs):
-        # コメントフラグの管理
-        auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']), theme=get_object_or_404(Theme, pk=kwargs['theme']))
-        if auth.is_read:
-            # print(auth.user)
-            pass
-        else:
-            # print(auth.user)
-            auth.is_read = True
-        auth.save()
+        # botに発言させる
         if kwargs['comment'] == "":
-            pass
-        elif kwargs['for_bot']:
-            pass
-        elif kwargs['to_bot']:
-            pass
+            print("mode:bot comment")
+            # コメントフラグの管理
+            auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']),
+                                                                theme=get_object_or_404(Theme, pk=kwargs['theme']))
+            if auth.is_read:
+                # print(auth.user)
+                pass
+            else:
+                # print(auth.user)
+                auth.is_read = True
+            auth.save()
+
+            comment = Comment()
+            comment.theme = get_object_or_404(Theme, pk=kwargs['theme'])
+            comment.auth = get_object_or_404(User, username='bot')
+            comment.comment = Bot.objects.order_by('?')[:1][0].comment
+            # comment.comment = get_object_or_404(Bot, pk=1).comment
+            comment.save()
+        # botとして発言する
+        elif kwargs['forbot']:
+            # コメントフラグの管理
+            auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']),
+                                                                theme=get_object_or_404(Theme, pk=kwargs['theme']))
+            if auth.is_read:
+                # print(auth.user)
+                pass
+            else:
+                # print(auth.user)
+                auth.is_read = True
+            auth.save()
+
+            comment = Comment()
+            comment.theme = get_object_or_404(Theme, pk=kwargs['theme'])
+            comment.auth = get_object_or_404(User, username='bot')
+            comment.comment = kwargs['comment']
+            comment.save()
+
+        # botに発言を登録する
+        elif kwargs['tobot']:
+            bot = Bot(comment=kwargs['comment'])
+            bot.save()
         else:
+            # コメントフラグの管理
+            auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']),
+                                                                theme=get_object_or_404(Theme, pk=kwargs['theme']))
+            if auth.is_read:
+                # print(auth.user)
+                pass
+            else:
+                # print(auth.user)
+                auth.is_read = True
+            auth.save()
+
             # コメント情報をデータベースに登録
             comment = Comment()
             comment.theme = get_object_or_404(Theme, pk=kwargs['theme'])

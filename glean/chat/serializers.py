@@ -8,6 +8,13 @@ class UserSerializer(ModelSerializer):
         update_fields = ('username', 'id', )
 
 
+class BotSerializer(ModelSerializer):
+    class Meta:
+        model = 'chat.Bot'
+        publish_fields = ('comment', 'id')
+        update_fields = ('comment', 'id', )
+
+
 class CommentSerializer(ModelSerializer):
     class Meta:
         model = 'chat.Comment'

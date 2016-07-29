@@ -86,7 +86,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
         // console.log($scope.user);
         // console.log($scope.roomId);
         // data.room = $scope.todoList;
-        $dragon.create('route-comment', {comment:data.text, theme:$scope.theme_id, auth:$scope.user.id, for_bot:for_bot, to_bot:to_bot});
+        $dragon.create('route-comment', {comment:data.text, theme:$scope.theme_id, auth:$scope.user.id, forbot:for_bot, tobot:to_bot});
         data.text = "";
         $dragon.getSingle('route-register', {theme:$scope.theme_id}).then(function(response) {
             $scope.register_theme_list = response.data;
