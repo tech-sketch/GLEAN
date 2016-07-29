@@ -6,6 +6,14 @@ from swampdragon.models import SelfPublishModel
 from .serializers import CommentSerializer, ThemeSerializer, ThemeRegisterSerializer
 
 
+class Bot(SelfPublishModel, models.Model):
+    serializer_class = ThemeSerializer
+    comment = models.TextField('コメント', blank=False)
+
+    def __str__(self):
+        return self.comment
+
+
 class Theme(SelfPublishModel, models.Model):
     serializer_class = ThemeSerializer
     auth = models.ForeignKey('auth.User', related_name='theme')
@@ -14,6 +22,7 @@ class Theme(SelfPublishModel, models.Model):
     is_enforce = models.BooleanField(default=True)
     createdate = models.DateTimeField(default=datetime.now)
     updatedate = models.DateTimeField(auto_now=True)
+    good = models.IntegerField(default=0)
 
     def __str__(self):
         return self.theme
