@@ -50,7 +50,7 @@
          </div>
          <div class="modal-footer">
              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_user(username, mailaddress, password)">登録</a>
+             <button href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-disabled="!check_password(password.text,password2.text)" ng-click="create_user(username, mailaddress, password)">登録</button>
          </div>
      </div>
 </body>
