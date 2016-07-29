@@ -209,7 +209,7 @@
             <!--投稿欄 開始-->
             <div class="container input-chat left">
                 <nav class="grey lighten-1 ">
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="60" ng-model="data.text"></span>
+                    <span><input class="input-border-style black-text" type="text white" name="input-chat" value="" size="60" ng-model="data.text" ng-keyup="$event.keyCode == 13 ? create_comment(data) : null"></span>
                     <span><input class="black-text" type="submit" value="+" ng-click="create_comment(data)"></span>
                 </nav>
             </div>
