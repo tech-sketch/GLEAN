@@ -114,12 +114,10 @@ STATIC_URL = '/static/'
 SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-DRAGON_URL = 'http://localhost:9999/'
+DRAGON_URL = 'http://127.0.0.1:9999/'
 # in deploy
 # please write your public ip and open port num(but "9999")
 #DRAGON_URL = 'http://:/'
-
-LOGIN_REDIRECT_URL = '/chat/'
 
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'

@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 100%;
   width: 100%;
 
 }
@@ -23,7 +23,7 @@
     position:relative;
 }
 
-,fixedBar nav{
+.fixedBar nav{
     position:fixed;
 }
 .input-chat{
@@ -96,7 +96,8 @@ margin-top:2%;
 
 .input-border-style{
     border-style:solid;
-    border-color:
+    position:relative;
+    left:5px;
 }
 
 .table-size{
@@ -158,9 +159,7 @@ margin-top:2%;
 }
 
 .sign-up{
-    position:fixed;
-    top:72%;
-    left:25%;
+    left:50%;
     z-index:1;
 }
 
@@ -199,4 +198,11 @@ margin-top:2%;
     width:80%;
 }
 
+.theme_title{
+    position:relative;
+    left:5px;
+}
 
+.chat-display-content{
+     margin:10px 0 30px 0;
+}
