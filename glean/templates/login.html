@@ -46,7 +46,7 @@
              <p>ユーザ名:</p><input type="text" value="" size="20" ng-model="username.text">
              <p>メールアドレス:</p><input type="text" value="" size="20" ng-model="mailaddress.text">
              <p>パスワード:</p><input type="password" value="" size="20" ng-model="password.text">
-             <p>パスワード(確認):</p><input type="password" value="" size="20" ng-model="password2.text">
+             <p>パスワード(確認):<span ng-if="!check_password(password.text,password2.text)" ng-bind="'パスワードが異なります！'"></span></p><input type="password" value="" size="20" ng-model="password2.text">
          </div>
          <div class="modal-footer">
              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
