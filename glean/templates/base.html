@@ -79,8 +79,15 @@
             <div class="fixedBar grey lighten-1 teal-text">
                 <nav class="grey lighten-1">
                     <div class="theme_title">
-                        <h5><span ng-bind="theme_item.theme" ng-if="theme_id != 0"></span></h5>
-                        <h5><span ng-bind="'未参加のテーマ一覧'" ng-if="theme_id == 0"></span></h5>
+                        <h5>
+                            <span ng-bind="theme_item.theme" ng-if="theme_id != 0"></span>
+                            <span ng-bind="'未参加のテーマ一覧'" ng-if="theme_id == 0"></span>
+                            <!--
+                            <h6>
+                                <a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a>
+                            </h6>
+                            -->
+                        </h5>
                         <div><h6><span ng-bind="theme_item.text" ng-if="theme_id != 0"></span></h6></div>
                     </div>
                 </nav>
@@ -216,10 +223,11 @@
         <div class="modal-content">
             <h4>編集</h4>
             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
+            <p>説明:</p><input type="text" name="theme_comment" value="" size="20">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="update_theme(theme_name,theme_comment)">編集</a>
         </div>
     </div>
 
