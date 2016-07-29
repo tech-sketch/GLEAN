@@ -212,4 +212,12 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.set_theme = function(id) {
         $scope.theme_id = id;
     }
+    $scope.check_password = function(password1, password2) {
+        if (password1==password2){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }]);
