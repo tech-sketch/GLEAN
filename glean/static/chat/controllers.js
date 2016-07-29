@@ -82,11 +82,11 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
 
     });
     // コメントの新規作成
-    $scope.create_comment = function(data) {
+    $scope.create_comment = function(data, for_bot, to_bot) {
         // console.log($scope.user);
         // console.log($scope.roomId);
         // data.room = $scope.todoList;
-        $dragon.create('route-comment', {comment:data.text, theme:$scope.theme_id, auth:$scope.user.id});
+        $dragon.create('route-comment', {comment:data.text, theme:$scope.theme_id, auth:$scope.user.id, for_bot:for_bot, to_bot:to_bot});
         data.text = "";
         $dragon.getSingle('route-register', {theme:$scope.theme_id}).then(function(response) {
             $scope.register_theme_list = response.data;
