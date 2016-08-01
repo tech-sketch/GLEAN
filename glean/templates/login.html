@@ -43,14 +43,14 @@
 <div id="modal-signup" class="modal modal-fixed-footer" ng-controller="TodoListCtrl">
          <div class="modal-content">
              <h4>新規登録</h4>
-             <p>ユーザ名:</p><input type="text" value="" size="20" ng-model="username" placeholder="your name">
-             <p>メールアドレス:</p><input type="text" value="" size="20" ng-model="mailaddress" placeholder="mail address">
-             <p>パスワード:</p><input type="password" value="" size="20" ng-model="password" placeholder="password">
-             <p>パスワード(確認):<span ng-if="!check_password(password,password2)" ng-bind="'パスワードが異なります！'"></span></p><input type="password" value="" size="20" ng-model="password2" placeholder="password">
+             <p>ユーザ名:</p><input type="text" value="" size="20" ng-model="username.text" placeholder="your name">
+             <p>メールアドレス:</p><input type="text" value="" size="20" ng-model="mailaddress.text" placeholder="mail address">
+             <p>パスワード:</p><input type="password" value="" size="20" ng-model="password.text" placeholder="password">
+             <p>パスワード(確認):<span ng-if="!check_password(password.text,password2.text)" ng-bind="'パスワードが異なります！'"></span></p><input type="password" value="" size="20" ng-model="password2.text" placeholder="password">
          </div>
          <div class="modal-footer">
              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-             <button href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-disabled="!check_password(password,password2)" ng-click="create_user(username, mailaddress, password)">登録</button>
+             <button href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-disabled="!check_password(password.text,password2.text)" ng-click="create_user(username, mailaddress, password)">登録</button>
          </div>
      </div>
 </body>
