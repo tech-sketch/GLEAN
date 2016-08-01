@@ -105,10 +105,14 @@
                     <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && is_read(register_theme_list, theme_item)">
                         <div class="card hoverable white chat">
                             <div class="container name">
-                                <span class="left-align name" ng-bind="get_username(item)"></span>
+                                <span class="left-align name" ng-if="item.auth==theme_item.auth" ng-bind="get_username(item)+'さんの回答'"></span>
+                                <span class="left-align name" ng-if="item.auth!=theme_item.auth" ng-bind="get_username(item)+'さんの質問'"></span>
                                 <span class="right datetime" ng-bind="item.createdate"></span>
                             </div>
-                            <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
+                            <div class="left image">
+                                <img ng-if="item.auth!=theme_item.auth" src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80">
+                                <img ng-if="item.auth==theme_item.auth" src="https://www.pakutaso.com/shared/img/thumb/YOU85_ochibamomijiTT20131109094311_TP_V.jpg" width="80" height="80">
+                            </div>
                             <div class="card-content left-align chat-content">
                                 <p class="chat-content">
                                     <span ng-bind="item.comment"></span>
