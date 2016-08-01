@@ -52,24 +52,24 @@
 
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-                        <h5><span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        <h5><span class="card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
                      </li>
                  </ul>
 
                  <h4>
                      新規参加
-                     <a class="dropdown-button bun right white-text" href="#" data-activates="dropdown1">
+                     <a class="dropdown-button bun right white-text" href="" data-activates="dropdown1">
                          <i class="material-icons">add</i>
                      </a>
                      <ul id='dropdown1' class="dropdown-content grey lighten-1">
-                         <li><a class="waves-effect waves-light black-text" href="#" ng-click="set_theme(0)">ランキング</a></li>
+                         <li><a class="waves-effect waves-light black-text" href="" ng-click="set_theme(0)">ランキング</a></li>
                          <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
                      </ul>
                  </h4>
 
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
-                        <h5><span class="button card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        <h5><span class="button card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
                      </li>
                  </ul>
             </div>
@@ -183,7 +183,7 @@
             <h4>ログアウトしますか？</h4>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
             <a href="{% url 'logout' %}" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">ログアウト</a>
         </div>
     </div>
@@ -196,8 +196,8 @@
             <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
         </div>
     </div>
     <div id="modal2" class="modal modal-fixed-footer">
@@ -207,8 +207,8 @@
             <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text"/>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment)">登録</a>
         </div>
     </div>
     <div id="modal3" class="modal modal-fixed-footer">
@@ -220,8 +220,8 @@
             <label for="check">発言を求める</label></p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment, flag)">登録</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_theme(theme, comment, flag)">登録</a>
         </div>
     </div>
     <div id="modal-edit1" class="modal modal-fixed-footer">
@@ -231,8 +231,8 @@
             <p>説明:</p><input type="text" name="theme_comment" value="" size="20">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="update_theme(theme_name,theme_comment)">編集</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="update_theme(theme_name,theme_comment)">編集</a>
         </div>
     </div>
 
@@ -242,8 +242,8 @@
             <p>テーマ名:</p><input type="text" name="theme_name" value="" size="20">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
         </div>
     </div>
 
@@ -256,8 +256,8 @@
             <p>パスワード(確認):</p><input type="password" value="" size="20">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">削除</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text">編集</a>
         </div>
     </div>
     <div id="modal-comment1" class="modal modal-fixed-footer">
@@ -266,8 +266,8 @@
             <p>コメント:</p><input type="text"value="" size="20" ng-model="data.text">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_comment(data)">登録</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat blue white-text" ng-click="create_comment(data)">登録</a>
         </div>
     </div>
 </div>
