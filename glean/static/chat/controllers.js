@@ -31,6 +31,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.comment_channel = 'comments';
     $scope.theme_channel = 'themes';
     $scope.register_channel = 'registers';
+    $scope.data = {};
 
     $dragon.onReady(function() {
 
@@ -96,10 +97,12 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     }
     // 閲覧するテーマの設定、及び更新確認設定
     // 更新確認(subscribe)は基本的上書きされていくので、気にしなくてもよい
-    $scope.read_theme = function(theme) {
+    $scope.read_theme = function(theme, data) {
         // console.log(room);
         $scope.theme_id = theme.id;
         // console.log($scope.theme_id);
+
+        data.text = "";
 
         $dragon.subscribe('route-comment', $scope.comment_channel, {}).then(function(response) {
             $scope.dataMapper_comment = new DataMapper(response.data);
@@ -168,12 +171,6 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.get_theme_list_order = function() {
         $dragon.getList('route-theme', {order:"update"}).then(function(response) {
             $scope.theme_list_order = response.data;
-
-            for(var i=0;i<$scope.theme_list_order.length;i++){
-                $dragon.getSingle('route-comment', {theme:$scope.theme_id, order:"update"}).then(function(response) {
-                    $scope.theme_list_order[i].comment = response.data;
-                });
-            }
         });
     }
     $scope.get_username = function(item) {

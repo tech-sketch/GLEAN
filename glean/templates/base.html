@@ -52,7 +52,7 @@
 
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-                        <h5><span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
+                        <h5><span class="card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
                      </li>
                  </ul>
 
@@ -69,7 +69,7 @@
 
                  <ul>
                      <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
-                        <h5><span class="button card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item)"></span></h5>
+                        <h5><span class="button card s3 grey darken-2 white-text" href="#!" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
                      </li>
                  </ul>
             </div>
@@ -151,7 +151,7 @@
                                 <h6><span ng-bind="item.text"></span></h6>
                             </p>
                             <div>
-                                <a class="btn blue good"><i class="material-icons left" ng-bind="'参加する'" ng-click="read_theme(item)"></i></a>
+                                <a class="btn blue good"><i class="material-icons left" ng-bind="'参加する'" ng-click="read_theme(item, data)"></i></a>
                             </div>
                         </div>
                     </div>

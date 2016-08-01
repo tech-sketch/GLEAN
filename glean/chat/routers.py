@@ -43,6 +43,9 @@ class UserRouter(ModelRouter):
         user.set_password(kwargs['password'])
         user.email = kwargs['mailaddress']
         user.save()
+
+        theme = Theme(theme=kwargs['username'], text="", auth=user, is_enforce=True)
+        theme.save()
         # print(user.password)
 
 class ThemeRouter(ModelRouter):
@@ -179,6 +182,10 @@ class CommentRouter(ModelRouter):
         comment = get_object_or_404(Comment, pk=kwargs['comment'])
         comment.good = comment.good + 1
         comment.save()
+
+        theme = get_object_or_404(Theme, pk=comment.theme)
+        theme.good = theme.good + 1
+        theme.save()
 
 
 class ThemeRegisterRouter(ModelRouter):
