@@ -166,7 +166,7 @@
                     <input type="checkbox" id="to_bot" name="bot_mode" ng-model="to_bot" ng-true-value="1" ng-false-value="0" ng-init="to_bot = 0"/>
                     <label class="black-text" for="to_bot">botの発言に登録</label>
                     <span><input class="black-text" type="submit" value="+" ng-click="create_comment(data,for_bot,to_bot)"></span>
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data.text" ng-keyup="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
+                    <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data" ng-keyup="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
                 </nav>
             </div>
             <!--投稿欄 終了-->
@@ -191,8 +191,8 @@
     <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>新規登録</h4>
-            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text">
-            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text">
+            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme">
+            <p>説明:</p><input type="text" value="" size="20" ng-model="comment">
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
@@ -202,8 +202,8 @@
     <div id="modal2" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>新規登録</h4>
-            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text"/>
-            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text"/>
+            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme"/>
+            <p>説明:</p><input type="text" value="" size="20" ng-model="comment"/>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
@@ -213,8 +213,8 @@
     <div id="modal3" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>新規登録</h4>
-            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme.text"/>
-            <p>説明:</p><input type="text" value="" size="20" ng-model="comment.text"/>
+            <p>テーマ名:</p><input type="text"value="" size="20" ng-model="theme"/>
+            <p>説明:</p><input type="text" value="" size="20" ng-model="comment"/>
             <p><input type="checkbox" id="check" value="" ng-model="flag" ng-true-value="1" ng-false-value="0"/>
             <label for="check">発言を求める</label></p>
         </div>
@@ -262,7 +262,7 @@
     <div id="modal-comment1" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>コメントしてみませんか？</h4>
-            <p>コメント:</p><input type="text"value="" size="20" ng-model="data.text">
+            <p>コメント:</p><input type="text"value="" size="20" ng-model="data">
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">キャンセル</a>
