@@ -47,8 +47,8 @@ class UserRouter(ModelRouter):
         theme = Theme(theme=kwargs['username'], text="", auth=user, is_enforce=True)
         theme.save()
 
-        auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=user),
-                                                            theme=get_object_or_404(Theme, pk=theme))
+        auth, created = ThemeRegister.objects.get_or_create(user=user,
+                                                            theme=theme)
 
         if auth.is_read:
             # print(auth.user)
@@ -122,7 +122,7 @@ class CommentRouter(ModelRouter):
     def create(self, **kwargs):
         # botに発言させる
         if kwargs['comment'] == "":
-            print("mode:bot comment")
+            # print("mode:bot comment")
             # コメントフラグの管理
             auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']),
                                                                 theme=get_object_or_404(Theme, pk=kwargs['theme']))
