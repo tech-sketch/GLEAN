@@ -118,8 +118,7 @@
                                     <span ng-bind="item.comment"></span>
                                 </p>
                                 <div>
-                                    <a class="btn blue good" ng-click="update_comment_good(item)"><i class="material-icons left">thumb_up</i></a>
-                                    <span ng-bind="item.good"></span>
+                                    <a class="btn blue good" ng-click="update_comment_good(item)"><i class="material-icons left">thumb_up</i><span ng-bind="item.good"></span></a>
                                     <a class="btn right grey" ng-if="item.auth==user.id" ng-click="delete_comment(item)"><i class="material-icons left">delete</i></a>
                                 </div>
                             </div>
