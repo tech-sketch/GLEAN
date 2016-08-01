@@ -40,7 +40,7 @@
                     <!-- Dropdown Structure -->
                     <ul id='dropdown-profile' class='dropdown-content'>
                         <div>
-                            <li><a class="waves-effect waves-light black-text" href="" ng-click="read_own_theme()">自分への質問</a></li>
+                            <li><a class="waves-effect waves-light black-text" href="" ng-click="read_own_theme()">自分のページ</a></li>
                             <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
                         </div>
                     </ul>
@@ -124,7 +124,7 @@
                 <!--テーマ選択済みでコメントがない場合-->
                 <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
                     <div class="container name">
-                        <span class="left-align name" ng-bind="user.username"></span>
+                        <span class="left-align name" ng-bind="user.username + 'さん'"></span>
                     </div>
                     <div class="card-content left-align chat-content">
                         <p class="chat-content">
@@ -134,7 +134,7 @@
                 </div>
                 <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
                     <div class="container name">
-                        <span class="left-align name" ng-bind="user.username"></span>
+                        <span class="left-align name" ng-bind="user.username + 'さん'"></span>
                     </div>
                     <div class="card-content left-align chat-content">
                         <p class="chat-content">
@@ -167,7 +167,7 @@
                     <input type="checkbox" id="to_bot" name="bot_mode" ng-model="to_bot" ng-true-value="1" ng-false-value="0" ng-init="to_bot = 0"/>
                     <label class="black-text" for="to_bot">botの発言に登録</label>
                     <!--<span><input class="black-text" type="submit" value="+" ng-click="create_comment(data,for_bot,to_bot)"></span>-->
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" size="60" ng-model="data.text" ng-keyup="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
+                    <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data.text" ng-keyup="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
                 </nav>
             </div>
             <!--投稿欄 終了-->
