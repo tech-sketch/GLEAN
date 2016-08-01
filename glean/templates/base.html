@@ -40,7 +40,7 @@
                     <!-- Dropdown Structure -->
                     <ul id='dropdown-profile' class='dropdown-content'>
                         <div>
-                            <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-profile">個人設定</a></li>
+                            <li><a class="waves-effect waves-light black-text" href="" ng-click="read_my_theme()">自分への質問</a></li>
                             <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
                         </div>
                     </ul>
@@ -151,7 +151,7 @@
                                 <h6><span ng-bind="item.text"></span></h6>
                             </p>
                             <div>
-                                <a class="btn blue good"><i class="material-icons left" ng-bind="'参加する'" ng-click="read_theme(item, data)"></i></a>
+                                <a class="btn blue good"><i class="material-icons left" ng-bind="'質問する'" ng-click="read_theme(item, data)"></i></a>
                             </div>
                         </div>
                     </div>

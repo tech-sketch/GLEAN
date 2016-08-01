@@ -212,6 +212,33 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.set_theme = function(id) {
         $scope.theme_id = id;
     }
+    $scope.read_my_theme = function() {
+        for(var i=0;i<$scope.theme_list.length;i++){
+            // console.log($scope.theme_list[i].id, $scope.theme_list[i].theme,$scope.user.username);
+            if($scope.theme_list[i].theme == $scope.user.username){
+                $scope.theme_id = $scope.theme_list[i].id;
+                break;
+            }
+        }
+
+        $dragon.subscribe('route-comment', $scope.comment_channel, {}).then(function(response) {
+            $scope.dataMapper_comment = new DataMapper(response.data);
+        });
+        $dragon.getSingle('route-register', {theme:$scope.theme_id}).then(function(response) {
+            $scope.register_theme_list = response.data;
+            // console.log($scope.register_theme_list.is_read);
+        });
+        $dragon.getList('route-register', {theme:""}).then(function(response) {
+            $scope.register_user_list = response.data;
+            // console.log(response.data);
+        });
+        $dragon.getSingle('route-theme', {id:$scope.theme_id}).then(function(response) {
+            $scope.theme_item = response.data;
+        });
+        $dragon.getList('route-comment', {theme:$scope.theme_id}).then(function(response) {
+            $scope.comment_list = response.data;
+        });
+    }
     $scope.check_password = function(password1, password2) {
         if (password1==password2){
             return true;
