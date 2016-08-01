@@ -28,8 +28,8 @@ class CommentSerializer(ModelSerializer):
 class ThemeSerializer(ModelSerializer):
     class Meta:
         model = 'chat.Theme'
-        publish_fields = ('theme', 'text', 'auth', 'createdate', 'updatedate', 'is_enforce')
-        update_fields = ('theme', 'text', 'auth', 'createdate', 'updatedate', 'is_enforce', )
+        publish_fields = ('theme', 'text', 'auth', 'createdate', 'updatedate', 'is_enforce', 'good')
+        update_fields = ('theme', 'text', 'auth', 'createdate', 'updatedate', 'is_enforce', 'good',)
 
 
 class ThemeRegisterSerializer(ModelSerializer):
