@@ -80,7 +80,7 @@
                 <nav class="grey lighten-1">
                     <div class="theme_title">
                         <h5>
-                            <span ng-bind="theme_item.theme" ng-if="theme_id != 0"></span>
+                            <span ng-bind="theme_item.theme + 'さんのページ'" ng-if="theme_id != 0"></span>
                             <span ng-bind="'ランキング'" ng-if="theme_id == 0"></span>
                             <!--
                             <h6>
@@ -88,7 +88,8 @@
                             </h6>
                             -->
                         </h5>
-                        <div><h6><span ng-bind="theme_item.text" ng-if="theme_id != 0"></span></h6></div>
+                        <!--<div><h6><span ng-bind="theme_item.text" ng-if="theme_id != 0"></span></h6></div>-->
+                        <div><h6><span ng-bind="'参考になるコメントがあったら青いボタンを押してください'" ng-if="theme_id != 0"></span></h6></div>
                     </div>
                 </nav>
             </div>
