@@ -46,6 +46,17 @@ class UserRouter(ModelRouter):
 
         theme = Theme(theme=kwargs['username'], text="", auth=user, is_enforce=True)
         theme.save()
+
+        auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=user),
+                                                            theme=get_object_or_404(Theme, pk=theme))
+
+        if auth.is_read:
+            # print(auth.user)
+            pass
+        else:
+            # print(auth.user)
+            auth.is_read = True
+        auth.save()
         # print(user.password)
 
 class ThemeRouter(ModelRouter):
@@ -59,7 +70,7 @@ class ThemeRouter(ModelRouter):
 
     @exception
     def get_query_set(self, **kwargs):
-        return self.model.objects.order_by(kwargs["order"])
+        return self.model.objects.order_by(kwargs["order"]).reverse()
 
     @exception
     def create(self, **kwargs):
@@ -183,7 +194,7 @@ class CommentRouter(ModelRouter):
         comment.good = comment.good + 1
         comment.save()
 
-        theme = get_object_or_404(Theme, pk=comment.theme)
+        theme = comment.theme
         theme.good = theme.good + 1
         theme.save()
 
