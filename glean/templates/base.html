@@ -47,17 +47,17 @@
                     </span>
 
                     <h4>
-                     質問中
+                        #質問中
                     </h4>
 
                     <ul>
-                        <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-                            <h5><span class="card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        <li ng-repeat="item in theme_list" ng-if="check_register(item) && item.theme">
+                            <h5><span class="card s3 grey darken-2 white-text" href="" ng-bind="'/'+item.theme" ng-click="read_theme(item, data)"></span></h5>
                         </li>
                     </ul>
 
                     <h4>
-                        新規参加
+                        #新規参加
                         <a class="dropdown-button bun right white-text" href="" data-activates="dropdown1">
                             <i class="material-icons">add</i>
                         </a>
@@ -68,8 +68,8 @@
                     </h4>
 
                     <ul>
-                        <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
-                            <h5><span class="button card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        <li ng-repeat="item in theme_list" ng-if="!check_register(item) && item.theme">
+                            <h5><span class="button card s3 grey darken-2 white-text" href="" ng-bind="'/'+item.theme" ng-click="read_theme(item, data)"></span></h5>
                         </li>
                     </ul>
                 </div>
@@ -80,8 +80,8 @@
                     <nav class="grey lighten-1">
                         <div class="theme_title">
                             <h5>
-                                <span ng-bind="theme_item.theme + 'さんのページ'" ng-if="theme_id != 0"></span>
-                                <span ng-bind="'ランキング'" ng-if="theme_id == 0"></span>
+                                <span ng-bind="'/'+theme_item.theme + 'さんのページ'" ng-if="theme_id != 0"></span>
+                                <span ng-bind="'/ランキング'" ng-if="theme_id == 0"></span>
                                 <!--
                                 <h6>
                                     <a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a>
