@@ -8,6 +8,7 @@ from .serializers import CommentSerializer, ThemeSerializer, UserSerializer, The
 
 import traceback
 
+
 def exception(func):
     def wrapper(*args, **kwargs):
         try:
@@ -18,6 +19,7 @@ def exception(func):
             print(traceback.print_exc())
             print("--------------------------------------------")
     return wrapper
+
 
 class UserRouter(ModelRouter):
     route_name = 'route-user'
@@ -59,6 +61,7 @@ class UserRouter(ModelRouter):
         auth.save()
         # print(user.password)
 
+
 class ThemeRouter(ModelRouter):
     route_name = 'route-theme'
     serializer_class = ThemeSerializer
@@ -75,10 +78,12 @@ class ThemeRouter(ModelRouter):
     @exception
     def create(self, **kwargs):
         if kwargs['is_enforce'] == 1:
-            theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']),
+            theme = Theme(theme=kwargs['theme'], text=kwargs['text'],
+                          auth=get_object_or_404(User, pk=kwargs['auth']),
                           is_enforce=True)
         else:
-            theme = Theme(theme=kwargs['theme'], text=kwargs['text'], auth=get_object_or_404(User, pk=kwargs['auth']),
+            theme = Theme(theme=kwargs['theme'], text=kwargs['text'],
+                          auth=get_object_or_404(User, pk=kwargs['auth']),
                           is_enforce=False)
         theme.save()
 
@@ -98,11 +103,6 @@ class ThemeRouter(ModelRouter):
         theme.theme = kwargs['theme']
         theme.text = kwargs['text']
         theme.save()
-
-        #comment_list = Comment.objects.filter(theme=kwargs["theme"])
-        #for i in range(comment_list.length):
-        #    comment_list[i].delete()
-
 
 
 class CommentRouter(ModelRouter):
@@ -206,7 +206,8 @@ class ThemeRegisterRouter(ModelRouter):
 
     @exception
     def get_object(self, **kwargs):
-        obj, created = self.model.objects.get_or_create(user=self.connection.user, theme=get_object_or_404(Theme, pk=kwargs['theme']))
+        obj, created = self.model.objects.get_or_create(user=self.connection.user,
+                                                        theme=get_object_or_404(Theme, pk=kwargs['theme']))
         # print(obj.is_read, created)
         return obj
 
