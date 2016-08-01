@@ -212,7 +212,7 @@ TodoControllers.controller('TodoListCtrl', ['$scope', '$dragon', function ($scop
     $scope.set_theme = function(id) {
         $scope.theme_id = id;
     }
-    $scope.read_my_theme = function() {
+    $scope.read_own_theme = function() {
         for(var i=0;i<$scope.theme_list.length;i++){
             // console.log($scope.theme_list[i].id, $scope.theme_list[i].theme,$scope.user.username);
             if($scope.theme_list[i].theme == $scope.user.username){
