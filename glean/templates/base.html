@@ -24,157 +24,157 @@
     <script type="text/javascript" src="{% static 'chat/controllers.js' %}"></script>
 
 </head>
+
 <body>
+    <div class="container" ng-controller="TodoListCtrl">
 
-<div class="container" ng-controller="TodoListCtrl">
-
-    <div class="row basepage grey lighten-3">
-        <div class="navbar-fixed">
-            <!--サイドバ　開始ー-->
-            <div class="col s3 grey darken-3 white-text sideBar-fixed side-z-index">
-                <span>
-                    <h5>
-                        <i class="material-icons">perm_identity</i>
-                        <a class="dropdown-button bun white-text" href="modal-profile" data-activates="dropdown-profile" ng-bind="user.username"></a>
-                    </h5>
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown-profile' class='dropdown-content'>
-                        <div>
-                            <li><a class="waves-effect waves-light black-text" href="" ng-click="read_own_theme()">自分のページ</a></li>
-                            <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
-                        </div>
-                    </ul>
-                </span>
-
-                 <h4>
-                     質問中
-                 </h4>
-
-                 <ul>
-                     <li ng-repeat="item in theme_list" ng-if="check_register(item)">
-                        <h5><span class="card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
-                     </li>
-                 </ul>
-
-                 <h4>
-                     新規参加
-                     <a class="dropdown-button bun right white-text" href="" data-activates="dropdown1">
-                         <i class="material-icons">add</i>
-                     </a>
-                     <ul id='dropdown1' class="dropdown-content grey lighten-1">
-                         <li><a class="waves-effect waves-light black-text" href="" ng-click="set_theme(0)">ランキング</a></li>
-                         <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
-                     </ul>
-                 </h4>
-
-                 <ul>
-                     <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
-                        <h5><span class="button card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
-                     </li>
-                 </ul>
-            </div>
-            <!--サイドバ 終了ー-->
-
-            <!--テーマ（タイトル）開始ー-->
-            <div class="fixedBar grey lighten-1 teal-text">
-                <nav class="grey lighten-1">
-                    <div class="theme_title">
+        <div class="row basepage grey lighten-3">
+            <div class="navbar-fixed">
+                <!--サイドバ　開始ー-->
+                <div class="col s3 grey darken-3 white-text sideBar-fixed side-z-index">
+                    <span>
                         <h5>
-                            <span ng-bind="theme_item.theme + 'さんのページ'" ng-if="theme_id != 0"></span>
-                            <span ng-bind="'ランキング'" ng-if="theme_id == 0"></span>
-                            <!--
-                            <h6>
-                                <a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a>
-                            </h6>
-                            -->
+                            <i class="material-icons">perm_identity</i>
+                            <a class="dropdown-button bun white-text" href="modal-profile" data-activates="dropdown-profile" ng-bind="user.username"></a>
                         </h5>
-                        <!--<div><h6><span ng-bind="theme_item.text" ng-if="theme_id != 0"></span></h6></div>-->
-                        <div><h6><span ng-bind="'参考になるコメントがあったら青いボタンを押してください'" ng-if="theme_id != 0"></span></h6></div>
-                    </div>
-                </nav>
-            </div>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown-profile' class='dropdown-content'>
+                            <div>
+                                <li><a class="waves-effect waves-light black-text" href="" ng-click="read_own_theme()">自分のページ</a></li>
+                                <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal-logout">ログアウト</a></li>
+                            </div>
+                        </ul>
+                    </span>
 
-            <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index navbar-fixed">
-                {% block content %}
-                {% endblock %}
-            </div>
-            <!--テーマ（タイトル）終了ー-->
+                    <h4>
+                     質問中
+                    </h4>
 
-            <!--チャット画面）開始ー-->
-            <div class="col s9 grey lighten-3 chat-display-content">
-                <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && is_read(register_theme_list, theme_item)">
-                    <div class="card hoverable white chat">
+                    <ul>
+                        <li ng-repeat="item in theme_list" ng-if="check_register(item)">
+                            <h5><span class="card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        </li>
+                    </ul>
+
+                    <h4>
+                        新規参加
+                        <a class="dropdown-button bun right white-text" href="" data-activates="dropdown1">
+                            <i class="material-icons">add</i>
+                        </a>
+                        <ul id='dropdown1' class="dropdown-content grey lighten-1">
+                            <li><a class="waves-effect waves-light black-text" href="" ng-click="set_theme(0)">ランキング</a></li>
+                            <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
+                        </ul>
+                    </h4>
+
+                    <ul>
+                        <li ng-repeat="item in theme_list" ng-if="!check_register(item)">
+                            <h5><span class="button card s3 grey darken-2 white-text" href="" ng-bind="item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        </li>
+                    </ul>
+                </div>
+                <!--サイドバ 終了ー-->
+
+                <!--テーマ（タイトル）開始ー-->
+                <div class="fixedBar grey lighten-1 teal-text">
+                    <nav class="grey lighten-1">
+                        <div class="theme_title">
+                            <h5>
+                                <span ng-bind="theme_item.theme + 'さんのページ'" ng-if="theme_id != 0"></span>
+                                <span ng-bind="'ランキング'" ng-if="theme_id == 0"></span>
+                                <!--
+                                <h6>
+                                    <a class="modal-trigger waves-effect waves-light black-text" href="#modal-edit1">編集</a>
+                                </h6>
+                                -->
+                            </h5>
+                            <!--<div><h6><span ng-bind="theme_item.text" ng-if="theme_id != 0"></span></h6></div>-->
+                            <div><h6><span ng-bind="'参考になるコメントがあったら青いボタンを押してください'" ng-if="theme_id != 0"></span></h6></div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="col s9 grey lighten-1 white-text left-align right titleBar chat-z-index navbar-fixed">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                <!--テーマ（タイトル）終了ー-->
+
+                <!--チャット画面）開始ー-->
+                <div class="col s9 grey lighten-3 chat-display-content">
+                    <li ng-repeat="item in comment_list" ng-if="item.theme == theme_id && is_read(register_theme_list, theme_item)">
+                        <div class="card hoverable white chat">
+                            <div class="container name">
+                                <span class="left-align name" ng-bind="get_username(item)"></span>
+                                <span class="right datetime" ng-bind="item.createdate"></span>
+                            </div>
+                            <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
+                            <div class="card-content left-align chat-content">
+                                <p class="chat-content">
+                                    <span ng-bind="item.comment"></span>
+                                </p>
+                                <div>
+                                    <a class="btn blue good" ng-click="update_comment_good(item)"><i class="material-icons left">thumb_up</i></a>
+                                    <span ng-bind="item.good"></span>
+                                    <a class="btn right grey" ng-if="item.auth==user.id" ng-click="delete_comment(item)"><i class="material-icons left">delete</i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--テーマ選択済みでコメントがない場合-->
+                    <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
                         <div class="container name">
-                            <span class="left-align name" ng-bind="get_username(item)"></span>
-                            <span class="right datetime" ng-bind="item.createdate"></span>
+                            <span class="left-align name" ng-bind="user.username + 'さん'"></span>
                         </div>
-                        <div class="left image"><img src="https://www.pakutaso.com/shared/img/thumb/PAK86_komorebitohizashi_TP_V1.jpg" width="80" height="80"></div>
                         <div class="card-content left-align chat-content">
                             <p class="chat-content">
-                                <span ng-bind="item.comment"></span>
+                                <span ng-bind="'投稿欄は下にあります'"></span>
                             </p>
-                            <div>
-                                <a class="btn blue good" ng-click="update_comment_good(item)"><i class="material-icons left">thumb_up</i></a>
-                                <span ng-bind="item.good"></span>
-                                <a class="btn right grey" ng-if="item.auth==user.id" ng-click="delete_comment(item)"><i class="material-icons left">delete</i></a>
-                            </div>
                         </div>
                     </div>
-                </li>
-                <!--テーマ選択済みでコメントがない場合-->
-                <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
-                    <div class="container name">
-                        <span class="left-align name" ng-bind="user.username + 'さん'"></span>
-                    </div>
-                    <div class="card-content left-align chat-content">
-                        <p class="chat-content">
-                            <span ng-bind="'投稿欄は下にあります'"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
-                    <div class="container name">
-                        <span class="left-align name" ng-bind="user.username + 'さん'"></span>
-                    </div>
-                    <div class="card-content left-align chat-content">
-                        <p class="chat-content">
-                            <span ng-bind="'まずはあなたの質問を投稿してみましょう！'"></span>
-                        </p>
-                    </div>
-                </div>
-
-                <!--テーマ未選択の場合-->
-                <li ng-repeat="item in theme_list_order" ng-if="theme_id == 0">
-                    <div class="card hoverable white chat">
+                    <div class="card hoverable white chat" ng-if="theme_id != 0 && !is_read(register_theme_list, theme_item)">
+                        <div class="container name">
+                            <span class="left-align name" ng-bind="user.username + 'さん'"></span>
+                        </div>
                         <div class="card-content left-align chat-content">
                             <p class="chat-content">
-                                <h4><span ng-bind="item.theme"></span></h4>
-                                <h6><span ng-bind="'Good:' + item.good"></span></h6>
+                                <span ng-bind="'まずはあなたの質問を投稿してみましょう！'"></span>
                             </p>
-                            <div>
-                                <a class="btn blue good"><i class="material-icons left" ng-bind="'質問する'" ng-click="read_theme(item, data)"></i></a>
-                            </div>
                         </div>
                     </div>
-                </li>
-            </div>
 
-            <!--投稿欄 開始-->
-            <div class="container input-chat left">
-                <nav class="grey lighten-1 ">
-                    <input type="checkbox" id="for_bot" name="bot_mode" ng-model="for_bot" ng-true-value="1" ng-false-value="0" ng-init="for_bot = 0"/>
-                    <label class="black-text" for="for_bot">botとして発言</label>
-                    <input type="checkbox" id="to_bot" name="bot_mode" ng-model="to_bot" ng-true-value="1" ng-false-value="0" ng-init="to_bot = 0"/>
-                    <label class="black-text" for="to_bot">botの発言に登録</label>
-                    <!--<span><input class="black-text" type="submit" value="+" ng-click="create_comment(data,for_bot,to_bot)"></span>-->
-                    <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data.text" ng-keyup="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
-                </nav>
+                    <!--テーマ未選択の場合-->
+                    <li ng-repeat="item in theme_list_order" ng-if="theme_id == 0">
+                        <div class="card hoverable white chat">
+                            <div class="card-content left-align chat-content">
+                                <p class="chat-content">
+                                    <h4><span ng-bind="item.theme"></span></h4>
+                                    <h6><span ng-bind="'Good:' + item.good"></span></h6>
+                                </p>
+                                <div>
+                                    <a class="btn blue good"><i class="material-icons left" ng-bind="'質問する'" ng-click="read_theme(item, data)"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+
+                <!--投稿欄 開始-->
+                <div class="container input-chat left">
+                    <nav class="grey lighten-1 ">
+                        <input type="checkbox" id="for_bot" name="bot_mode" ng-model="for_bot" ng-true-value="1" ng-false-value="0" ng-init="for_bot = 0"/>
+                        <label class="black-text" for="for_bot">botとして発言</label>
+                        <input type="checkbox" id="to_bot" name="bot_mode" ng-model="to_bot" ng-true-value="1" ng-false-value="0" ng-init="to_bot = 0"/>
+                        <label class="black-text" for="to_bot">botの発言に登録</label>
+                        <!--<span><input class="black-text" type="submit" value="+" ng-click="create_comment(data,for_bot,to_bot)"></span>-->
+                        <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data.text" ng-keyup="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
+                    </nav>
+                </div>
+                <!--投稿欄 終了-->
             </div>
-            <!--投稿欄 終了-->
+            <!--チャット画面終了ー-->
         </div>
-        <!--チャット画面終了ー-->
     </div>
-</div>
 </body>
 <div class="dialogs" ng-controller="TodoListCtrl">
     <!--ダイアログ定義-->
