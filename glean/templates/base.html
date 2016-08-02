@@ -57,19 +57,17 @@
                     </ul>
 
                     <h4>
-                        #新規参加
-                        <a class="dropdown-button bun right white-text" href="" data-activates="dropdown1">
-                            <i class="material-icons">add</i>
-                        </a>
-                        <ul id='dropdown1' class="dropdown-content grey lighten-1">
-                            <li><a class="waves-effect waves-light black-text" href="" ng-click="set_theme(0)">ランキング</a></li>
-                            <li><a class="modal-trigger waves-effect waves-light black-text" href="#modal2">新規登録</a></li>
-                        </ul>
+                        <span ng-click="set_theme(0)">
+                            #ランキング
+                        </span>
                     </h4>
 
                     <ul>
                         <li ng-repeat="item in theme_list" ng-if="!check_register(item) && item.theme">
                             <h5><span class="button card s3 grey darken-2 white-text" href="" ng-bind="'/'+item.theme" ng-click="read_theme(item, data)"></span></h5>
+                        </li>
+                        <li>
+                            <h5><span class="button card s3 grey white-text" href="" ng-bind="'>>詳しく見る'" ng-click="set_theme(0)"></span></h5>
                         </li>
                     </ul>
                 </div>
