@@ -135,7 +135,7 @@ class CommentRouter(ModelRouter):
             # comment.comment = get_object_or_404(Bot, pk=1).comment
             comment.save()
         # botとして発言する
-        elif kwargs['forbot'] and auth.is_read:
+        elif kwargs['comment'] != "" and kwargs['forbot'] and auth.is_read:
             # コメントフラグの管理
             auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']),
                                                                 theme=get_object_or_404(Theme, pk=kwargs['theme']))
@@ -154,10 +154,10 @@ class CommentRouter(ModelRouter):
             comment.save()
 
         # botに発言を登録する
-        elif kwargs['tobot']:
+        elif kwargs['comment'] != "" and kwargs['tobot']:
             bot = Bot(comment=kwargs['comment'])
             bot.save()
-        else:
+        elif kwargs['comment'] != "":
             # コメントフラグの管理
             if auth.is_read:
                 # print(auth.user)
@@ -173,6 +173,8 @@ class CommentRouter(ModelRouter):
             comment.auth = get_object_or_404(User, pk=kwargs['auth'])
             comment.comment = kwargs['comment']
             comment.save()
+        else:
+            pass
 
         # print(comment.createdate)
         # テーマ情報の更新日時を更新
