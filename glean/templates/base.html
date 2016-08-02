@@ -168,7 +168,7 @@
                         <input type="checkbox" id="to_bot" name="bot_mode" ng-model="to_bot" ng-true-value="1" ng-false-value="0" ng-init="to_bot = 0"/>
                         <label class="black-text" for="to_bot">botの発言に登録</label>
                         <!--<span><input class="black-text" type="submit" value="+" ng-click="create_comment(data,for_bot,to_bot)"></span>-->
-                        <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data.text" ng-keydown="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿ボタンを押すと、botが質問してくれます！"></span>
+                        <span><input class="input-border-style black-text" type="text white" name="input-chat" size="80" ng-model="data.text" ng-keydown="$event.keyCode == 13 ? create_comment(data,for_bot,to_bot) : null" placeholder="コメントせずに投稿すると、botが質問してくれます"></span>
                     </nav>
                 </div>
                 <!--投稿欄 終了-->
