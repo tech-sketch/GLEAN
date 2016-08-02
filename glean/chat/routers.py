@@ -136,16 +136,6 @@ class CommentRouter(ModelRouter):
             comment.save()
         # botとして発言する
         elif kwargs['comment'] != "" and kwargs['forbot'] and auth.is_read:
-            # コメントフラグの管理
-            auth, created = ThemeRegister.objects.get_or_create(user=get_object_or_404(User, pk=kwargs['auth']),
-                                                                theme=get_object_or_404(Theme, pk=kwargs['theme']))
-            if auth.is_read:
-                # print(auth.user)
-                pass
-            else:
-                # print(auth.user)
-                auth.is_read = True
-            auth.save()
 
             comment = Comment()
             comment.theme = get_object_or_404(Theme, pk=kwargs['theme'])
@@ -157,7 +147,7 @@ class CommentRouter(ModelRouter):
         elif kwargs['comment'] != "" and kwargs['tobot']:
             bot = Bot(comment=kwargs['comment'])
             bot.save()
-        elif kwargs['comment'] != "":
+        elif kwargs['comment'] != "" and kwargs['forbot'] != True and kwargs['tobot'] != True:
             # コメントフラグの管理
             if auth.is_read:
                 # print(auth.user)
